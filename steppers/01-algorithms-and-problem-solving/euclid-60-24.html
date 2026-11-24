@@ -71,8 +71,7 @@ T.pseudocode.forEach((line) => {
   });
   code.append(li);
 });
-document.getElementById('cmt').textContent = (T.comments || []).join('
-');
+document.getElementById('cmt').textContent = (T.comments || []).join('\n');
 document.getElementById('head').innerHTML = '<th>variable</th><th>value</th>';
 function show() {
   const s = T.steps[i];
