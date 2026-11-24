@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Euclid(832040, 514229) · step by step</title>
+<style>
+:root { --ink:#3F3F3F; --purple:#951A80; --purple-light:#F3E8F2; --teal:#2C7E91;
+  --teal-light:#E2EFEE; --hl:#FFF3D1; --grey:#757679; --grey-light:#EAEAEA; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff; }
+main { max-width:1100px; margin:0 auto; padding:24px 16px 40px; }
+h1 { font-size:28px; margin:0 0 4px; }
+.src { color:var(--teal); font-weight:bold; margin:0 0 18px; }
+.grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+.panel { border:3px solid var(--purple-light); border-radius:14px; padding:16px; }
+ol.code { font-family:"Courier New",monospace; font-size:18px; margin:0; padding-left:2.6em; }
+ol.code li { padding:3px 8px; border-radius:6px; white-space:pre; }
+ol.code li.now { background:var(--hl); outline:2px solid #C98B00; }
+.kw { font-weight:bold; }
+.cmt { font-family:"Courier New",monospace; font-size:16px; color:var(--grey); font-style:italic; margin:0 0 8px; white-space:pre-line; }
+table { border-collapse:collapse; width:100%; font-size:18px; }
+th, td { border-bottom:1px solid var(--grey-light); padding:6px 8px; text-align:right; }
+th { color:var(--purple); text-align:right; }
+.counter { font-size:22px; margin:12px 0 4px; }
+.counter b { color:var(--purple); font-size:30px; }
+.note { min-height:1.6em; font-style:italic; }
+.controls { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 8px; }
+button { font:inherit; font-size:18px; padding:10px 18px; border-radius:10px; border:2px solid var(--purple);
+  background:#fff; color:var(--purple); cursor:pointer; }
+button.primary { background:var(--purple); color:#fff; }
+button:disabled { opacity:.45; cursor:default; }
+button:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.pos { color:var(--grey); }
+.result { margin-top:10px; font-weight:bold; }
+</style></head>
+<body><main>
+<h1>Euclid(832040, 514229)</h1>
+<p class="src">ALGORITHM Euclid(m, n) · Levitin 1.1</p>
+<div class="controls" role="group" aria-label="Step controls">
+  <button id="reset">⏮ Start</button>
+  <button id="back">◀ Back</button>
+  <button id="next" class="primary">Next step ▶</button>
+  <button id="play">▶ Play</button>
+  <span class="pos" id="pos" aria-live="polite"></span>
+</div>
+<div class="grid">
+  <section class="panel" aria-label="Pseudocode"><p class="cmt" id="cmt"></p><ol class="code" id="code"></ol></section>
+  <section class="panel" aria-label="State">
+    <table><thead><tr id="head"></tr></thead><tbody id="vars"></tbody></table>
+    <p class="counter">divisions: <b id="count">0</b></p>
+    <p class="note" id="note" aria-live="polite"></p>
+    <p class="result" id="result" hidden>gcd = 1 after 28 divisions</p>
+  </section>
+</div>
+<p class="pos">Keys: → or space = next step, ← = back. Every value comes from the same run as the lecture's trace table.</p>
+</main>
+<script>
+const T = {"pseudocode": ["while n \u2260 0 do", "    r \u2190 m mod n", "    m \u2190 n", "    n \u2190 r", "return m"], "columns": ["m", "n", "r"], "comments": ["//Computes gcd(m, n) by Euclid's algorithm", "//Input: Two nonnegative, not-both-zero integers m and n", "//Output: Greatest common divisor of m and n"], "steps": [{"line": 0, "state": {"m": "832040", "n": "514229", "r": "\u2013"}, "counter": 0, "note": "start"}, {"line": 1, "state": {"m": "832040", "n": "514229", "r": "\u2013"}, "counter": 0, "note": "n = 514229: continue"}, {"line": 2, "state": {"m": "832040", "n": "514229", "r": "317811"}, "counter": 1, "note": "832040 mod 514229 = 317811"}, {"line": 3, "state": {"m": "514229", "n": "514229", "r": "317811"}, "counter": 1, "note": "m takes the old n"}, {"line": 4, "state": {"m": "514229", "n": "317811", "r": "317811"}, "counter": 1, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "514229", "n": "317811", "r": "317811"}, "counter": 1, "note": "n = 317811: continue"}, {"line": 2, "state": {"m": "514229", "n": "317811", "r": "196418"}, "counter": 2, "note": "514229 mod 317811 = 196418"}, {"line": 3, "state": {"m": "317811", "n": "317811", "r": "196418"}, "counter": 2, "note": "m takes the old n"}, {"line": 4, "state": {"m": "317811", "n": "196418", "r": "196418"}, "counter": 2, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "317811", "n": "196418", "r": "196418"}, "counter": 2, "note": "n = 196418: continue"}, {"line": 2, "state": {"m": "317811", "n": "196418", "r": "121393"}, "counter": 3, "note": "317811 mod 196418 = 121393"}, {"line": 3, "state": {"m": "196418", "n": "196418", "r": "121393"}, "counter": 3, "note": "m takes the old n"}, {"line": 4, "state": {"m": "196418", "n": "121393", "r": "121393"}, "counter": 3, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "196418", "n": "121393", "r": "121393"}, "counter": 3, "note": "n = 121393: continue"}, {"line": 2, "state": {"m": "196418", "n": "121393", "r": "75025"}, "counter": 4, "note": "196418 mod 121393 = 75025"}, {"line": 3, "state": {"m": "121393", "n": "121393", "r": "75025"}, "counter": 4, "note": "m takes the old n"}, {"line": 4, "state": {"m": "121393", "n": "75025", "r": "75025"}, "counter": 4, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "121393", "n": "75025", "r": "75025"}, "counter": 4, "note": "n = 75025: continue"}, {"line": 2, "state": {"m": "121393", "n": "75025", "r": "46368"}, "counter": 5, "note": "121393 mod 75025 = 46368"}, {"line": 3, "state": {"m": "75025", "n": "75025", "r": "46368"}, "counter": 5, "note": "m takes the old n"}, {"line": 4, "state": {"m": "75025", "n": "46368", "r": "46368"}, "counter": 5, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "75025", "n": "46368", "r": "46368"}, "counter": 5, "note": "n = 46368: continue"}, {"line": 2, "state": {"m": "75025", "n": "46368", "r": "28657"}, "counter": 6, "note": "75025 mod 46368 = 28657"}, {"line": 3, "state": {"m": "46368", "n": "46368", "r": "28657"}, "counter": 6, "note": "m takes the old n"}, {"line": 4, "state": {"m": "46368", "n": "28657", "r": "28657"}, "counter": 6, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "46368", "n": "28657", "r": "28657"}, "counter": 6, "note": "n = 28657: continue"}, {"line": 2, "state": {"m": "46368", "n": "28657", "r": "17711"}, "counter": 7, "note": "46368 mod 28657 = 17711"}, {"line": 3, "state": {"m": "28657", "n": "28657", "r": "17711"}, "counter": 7, "note": "m takes the old n"}, {"line": 4, "state": {"m": "28657", "n": "17711", "r": "17711"}, "counter": 7, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "28657", "n": "17711", "r": "17711"}, "counter": 7, "note": "n = 17711: continue"}, {"line": 2, "state": {"m": "28657", "n": "17711", "r": "10946"}, "counter": 8, "note": "28657 mod 17711 = 10946"}, {"line": 3, "state": {"m": "17711", "n": "17711", "r": "10946"}, "counter": 8, "note": "m takes the old n"}, {"line": 4, "state": {"m": "17711", "n": "10946", "r": "10946"}, "counter": 8, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "17711", "n": "10946", "r": "10946"}, "counter": 8, "note": "n = 10946: continue"}, {"line": 2, "state": {"m": "17711", "n": "10946", "r": "6765"}, "counter": 9, "note": "17711 mod 10946 = 6765"}, {"line": 3, "state": {"m": "10946", "n": "10946", "r": "6765"}, "counter": 9, "note": "m takes the old n"}, {"line": 4, "state": {"m": "10946", "n": "6765", "r": "6765"}, "counter": 9, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "10946", "n": "6765", "r": "6765"}, "counter": 9, "note": "n = 6765: continue"}, {"line": 2, "state": {"m": "10946", "n": "6765", "r": "4181"}, "counter": 10, "note": "10946 mod 6765 = 4181"}, {"line": 3, "state": {"m": "6765", "n": "6765", "r": "4181"}, "counter": 10, "note": "m takes the old n"}, {"line": 4, "state": {"m": "6765", "n": "4181", "r": "4181"}, "counter": 10, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "6765", "n": "4181", "r": "4181"}, "counter": 10, "note": "n = 4181: continue"}, {"line": 2, "state": {"m": "6765", "n": "4181", "r": "2584"}, "counter": 11, "note": "6765 mod 4181 = 2584"}, {"line": 3, "state": {"m": "4181", "n": "4181", "r": "2584"}, "counter": 11, "note": "m takes the old n"}, {"line": 4, "state": {"m": "4181", "n": "2584", "r": "2584"}, "counter": 11, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "4181", "n": "2584", "r": "2584"}, "counter": 11, "note": "n = 2584: continue"}, {"line": 2, "state": {"m": "4181", "n": "2584", "r": "1597"}, "counter": 12, "note": "4181 mod 2584 = 1597"}, {"line": 3, "state": {"m": "2584", "n": "2584", "r": "1597"}, "counter": 12, "note": "m takes the old n"}, {"line": 4, "state": {"m": "2584", "n": "1597", "r": "1597"}, "counter": 12, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "2584", "n": "1597", "r": "1597"}, "counter": 12, "note": "n = 1597: continue"}, {"line": 2, "state": {"m": "2584", "n": "1597", "r": "987"}, "counter": 13, "note": "2584 mod 1597 = 987"}, {"line": 3, "state": {"m": "1597", "n": "1597", "r": "987"}, "counter": 13, "note": "m takes the old n"}, {"line": 4, "state": {"m": "1597", "n": "987", "r": "987"}, "counter": 13, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "1597", "n": "987", "r": "987"}, "counter": 13, "note": "n = 987: continue"}, {"line": 2, "state": {"m": "1597", "n": "987", "r": "610"}, "counter": 14, "note": "1597 mod 987 = 610"}, {"line": 3, "state": {"m": "987", "n": "987", "r": "610"}, "counter": 14, "note": "m takes the old n"}, {"line": 4, "state": {"m": "987", "n": "610", "r": "610"}, "counter": 14, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "987", "n": "610", "r": "610"}, "counter": 14, "note": "n = 610: continue"}, {"line": 2, "state": {"m": "987", "n": "610", "r": "377"}, "counter": 15, "note": "987 mod 610 = 377"}, {"line": 3, "state": {"m": "610", "n": "610", "r": "377"}, "counter": 15, "note": "m takes the old n"}, {"line": 4, "state": {"m": "610", "n": "377", "r": "377"}, "counter": 15, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "610", "n": "377", "r": "377"}, "counter": 15, "note": "n = 377: continue"}, {"line": 2, "state": {"m": "610", "n": "377", "r": "233"}, "counter": 16, "note": "610 mod 377 = 233"}, {"line": 3, "state": {"m": "377", "n": "377", "r": "233"}, "counter": 16, "note": "m takes the old n"}, {"line": 4, "state": {"m": "377", "n": "233", "r": "233"}, "counter": 16, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "377", "n": "233", "r": "233"}, "counter": 16, "note": "n = 233: continue"}, {"line": 2, "state": {"m": "377", "n": "233", "r": "144"}, "counter": 17, "note": "377 mod 233 = 144"}, {"line": 3, "state": {"m": "233", "n": "233", "r": "144"}, "counter": 17, "note": "m takes the old n"}, {"line": 4, "state": {"m": "233", "n": "144", "r": "144"}, "counter": 17, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "233", "n": "144", "r": "144"}, "counter": 17, "note": "n = 144: continue"}, {"line": 2, "state": {"m": "233", "n": "144", "r": "89"}, "counter": 18, "note": "233 mod 144 = 89"}, {"line": 3, "state": {"m": "144", "n": "144", "r": "89"}, "counter": 18, "note": "m takes the old n"}, {"line": 4, "state": {"m": "144", "n": "89", "r": "89"}, "counter": 18, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "144", "n": "89", "r": "89"}, "counter": 18, "note": "n = 89: continue"}, {"line": 2, "state": {"m": "144", "n": "89", "r": "55"}, "counter": 19, "note": "144 mod 89 = 55"}, {"line": 3, "state": {"m": "89", "n": "89", "r": "55"}, "counter": 19, "note": "m takes the old n"}, {"line": 4, "state": {"m": "89", "n": "55", "r": "55"}, "counter": 19, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "89", "n": "55", "r": "55"}, "counter": 19, "note": "n = 55: continue"}, {"line": 2, "state": {"m": "89", "n": "55", "r": "34"}, "counter": 20, "note": "89 mod 55 = 34"}, {"line": 3, "state": {"m": "55", "n": "55", "r": "34"}, "counter": 20, "note": "m takes the old n"}, {"line": 4, "state": {"m": "55", "n": "34", "r": "34"}, "counter": 20, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "55", "n": "34", "r": "34"}, "counter": 20, "note": "n = 34: continue"}, {"line": 2, "state": {"m": "55", "n": "34", "r": "21"}, "counter": 21, "note": "55 mod 34 = 21"}, {"line": 3, "state": {"m": "34", "n": "34", "r": "21"}, "counter": 21, "note": "m takes the old n"}, {"line": 4, "state": {"m": "34", "n": "21", "r": "21"}, "counter": 21, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "34", "n": "21", "r": "21"}, "counter": 21, "note": "n = 21: continue"}, {"line": 2, "state": {"m": "34", "n": "21", "r": "13"}, "counter": 22, "note": "34 mod 21 = 13"}, {"line": 3, "state": {"m": "21", "n": "21", "r": "13"}, "counter": 22, "note": "m takes the old n"}, {"line": 4, "state": {"m": "21", "n": "13", "r": "13"}, "counter": 22, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "21", "n": "13", "r": "13"}, "counter": 22, "note": "n = 13: continue"}, {"line": 2, "state": {"m": "21", "n": "13", "r": "8"}, "counter": 23, "note": "21 mod 13 = 8"}, {"line": 3, "state": {"m": "13", "n": "13", "r": "8"}, "counter": 23, "note": "m takes the old n"}, {"line": 4, "state": {"m": "13", "n": "8", "r": "8"}, "counter": 23, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "13", "n": "8", "r": "8"}, "counter": 23, "note": "n = 8: continue"}, {"line": 2, "state": {"m": "13", "n": "8", "r": "5"}, "counter": 24, "note": "13 mod 8 = 5"}, {"line": 3, "state": {"m": "8", "n": "8", "r": "5"}, "counter": 24, "note": "m takes the old n"}, {"line": 4, "state": {"m": "8", "n": "5", "r": "5"}, "counter": 24, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "8", "n": "5", "r": "5"}, "counter": 24, "note": "n = 5: continue"}, {"line": 2, "state": {"m": "8", "n": "5", "r": "3"}, "counter": 25, "note": "8 mod 5 = 3"}, {"line": 3, "state": {"m": "5", "n": "5", "r": "3"}, "counter": 25, "note": "m takes the old n"}, {"line": 4, "state": {"m": "5", "n": "3", "r": "3"}, "counter": 25, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "5", "n": "3", "r": "3"}, "counter": 25, "note": "n = 3: continue"}, {"line": 2, "state": {"m": "5", "n": "3", "r": "2"}, "counter": 26, "note": "5 mod 3 = 2"}, {"line": 3, "state": {"m": "3", "n": "3", "r": "2"}, "counter": 26, "note": "m takes the old n"}, {"line": 4, "state": {"m": "3", "n": "2", "r": "2"}, "counter": 26, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "3", "n": "2", "r": "2"}, "counter": 26, "note": "n = 2: continue"}, {"line": 2, "state": {"m": "3", "n": "2", "r": "1"}, "counter": 27, "note": "3 mod 2 = 1"}, {"line": 3, "state": {"m": "2", "n": "2", "r": "1"}, "counter": 27, "note": "m takes the old n"}, {"line": 4, "state": {"m": "2", "n": "1", "r": "1"}, "counter": 27, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "2", "n": "1", "r": "1"}, "counter": 27, "note": "n = 1: continue"}, {"line": 2, "state": {"m": "2", "n": "1", "r": "0"}, "counter": 28, "note": "2 mod 1 = 0"}, {"line": 3, "state": {"m": "1", "n": "1", "r": "0"}, "counter": 28, "note": "m takes the old n"}, {"line": 4, "state": {"m": "1", "n": "0", "r": "0"}, "counter": 28, "note": "n takes the remainder"}, {"line": 1, "state": {"m": "1", "n": "0", "r": "0"}, "counter": 28, "note": "n = 0: stop"}, {"line": 5, "state": {"m": "1", "n": "0", "r": "0"}, "counter": 28, "note": "gcd = 1"}]};
+const KW = new Set(["ALGORITHM", "while", "do", "for", "to", "if", "else", "return", "and", "or", "not"]);
+let i = 0, timer = null;
+const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const code = document.getElementById('code');
+T.pseudocode.forEach((line) => {
+  const li = document.createElement('li');
+  const indent = line.length - line.trimStart().length;
+  li.textContent = '';
+  li.append(' '.repeat(indent));
+  line.trim().split(/(\b\w+\b)/).forEach((tok) => {
+    if (KW.has(tok)) { const b = document.createElement('span'); b.className = 'kw'; b.textContent = tok; li.append(b); }
+    else li.append(tok);
+  });
+  code.append(li);
+});
+document.getElementById('cmt').textContent = (T.comments || []).join('
+');
+document.getElementById('head').innerHTML = '<th>variable</th><th>value</th>';
+function show() {
+  const s = T.steps[i];
+  [...code.children].forEach((li, n) => li.classList.toggle('now', n + 1 === s.line));
+  document.getElementById('vars').innerHTML = T.columns.map((c) =>
+    `<tr><td style="text-align:left">${c}</td><td>${s.state[c] ?? '–'}</td></tr>`).join('');
+  document.getElementById('count').textContent = s.counter;
+  document.getElementById('note').textContent = s.note || '';
+  document.getElementById('pos').textContent = `step ${i} of ${T.steps.length - 1} · line ${s.line}`;
+  document.getElementById('back').disabled = i === 0;
+  document.getElementById('next').disabled = i === T.steps.length - 1;
+  document.getElementById('result').hidden = i !== T.steps.length - 1;
+  if (i === T.steps.length - 1) stop();
+}
+function stop() { if (timer) { clearInterval(timer); timer = null; } document.getElementById('play').textContent = '▶ Play'; }
+document.getElementById('next').onclick = () => { if (i < T.steps.length - 1) { i++; show(); } };
+document.getElementById('back').onclick = () => { stop(); if (i > 0) { i--; show(); } };
+document.getElementById('reset').onclick = () => { stop(); i = 0; show(); };
+const play = document.getElementById('play');
+if (reduce) { play.disabled = true; play.title = 'Play is off because your system asks for reduced motion'; }
+play.onclick = () => {
+  if (timer) { stop(); return; }
+  if (i === T.steps.length - 1) i = 0;
+  play.textContent = '⏸ Pause';
+  timer = setInterval(() => { if (i < T.steps.length - 1) { i++; show(); } else stop(); }, 1100);
+};
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); document.getElementById('next').click(); }
+  if (e.key === 'ArrowLeft') document.getElementById('back').click();
+});
+show();
+</script></body></html>

@@ -1,0 +1,149 @@
+[
+  {
+    "objectID": "leaderboards.html",
+    "href": "leaderboards.html",
+    "title": "Leaderboards",
+    "section": "",
+    "text": "Nicknames only. Boards are updated after each exercise session.\nNo leaderboard has been published yet. The first one appears after exercise session E1."
+  },
+  {
+    "objectID": "challenges.html",
+    "href": "challenges.html",
+    "title": "Challenges",
+    "section": "",
+    "text": "These challenges are optional, ungraded and just for fun. They do not affect your grade, nothing is awarded, and you can skip them entirely. They are a chance to play with the ideas from the lectures: push an algorithm to its worst case, find where a clever shortcut fails, and race the class for the shortest delivery route."
+  },
+  {
+    "objectID": "challenges.html#how-it-works",
+    "href": "challenges.html#how-it-works",
+    "title": "Challenges",
+    "section": "How it works",
+    "text": "How it works\n\nEach exercise session opens one short challenge. It stays open until the next session, where the leaderboard is shown and the idea behind the best answers is discussed.\nThe delivery-route challenge runs for most of the course, from Lecture 5 to the last exercise session.\nYou hand in a plain-text file through the ungraded challenge assignment in Canvas. You may resubmit as often as you like; your best valid submission counts.\nNicknames only. The first line of every file is nickname: &lt;name&gt;, using 3-20 letters, digits, _ or -. Choose a nickname that is not your real name. Leaderboards show nicknames only.\nYou submit inputs, not programs: numbers, words, points or a route. The teacher’s checker runs the fixed algorithm described below on your input. Write any helper programs you like, in any language, to find good inputs.\nUse any tools you like, including AI tools. The fun is in understanding why your answer works; be ready to explain it if you share it in class."
+  },
+  {
+    "objectID": "challenges.html#e1-make-euclid-work-hardest-two-parts",
+    "href": "challenges.html#e1-make-euclid-work-hardest-two-parts",
+    "title": "Challenges",
+    "section": "E1 · Make Euclid work hardest (two parts)",
+    "text": "E1 · Make Euclid work hardest (two parts)\nEuclid’s algorithm (Levitin 1.1) computes gcd(m, n) by repeating r ← m mod n; m ← n; n ← r while n ≠ 0. Which pair of numbers makes it divide most often?\nPart 1 (small numbers). Find the pair with 1 ≤ n ≤ m ≤ 100 that needs the most divisions. There are only 5050 pairs: a short program that tries them all, counting divisions as in Lecture 1, finds the answer in a blink. Submit m n as one file to the part 1 challenge.\nPart 2 (huge numbers). The same question with 1 ≤ n ≤ m ≤ 1 000 000 000. Now there are about 5 · 10¹⁷ pairs; trying them all would take longer than anyone has. Look closely at your part 1 answer: what is special about those two numbers, and why does that make Euclid slow? Then find the best pair below the new bound. (The pair from Lecture 1’s break question is valid here, but it is not the best.) Submit m n as a separate file to the part 2 challenge.\nScore: the number of mod operations Euclid performs. Higher is better. Each part has its own leaderboard.\nThis is the course in miniature: part 1 is solved by computing, part 2 by understanding why the answer to part 1 works. Lecture 3 proves the pattern."
+  },
+  {
+    "objectID": "challenges.html#e2-the-slowest-search",
+    "href": "challenges.html#e2-the-slowest-search",
+    "title": "Challenges",
+    "section": "E2 · The slowest search",
+    "text": "E2 · The slowest search\nBrute-force string matching (Levitin 3.2) tries every shift of the pattern along the text and compares characters from left to right until a mismatch. The checker counts every character comparison over all shifts.\nSubmit: two lines: a text of exactly 1000 characters and a pattern of exactly 10 characters, both using only a and b. The pattern must occur exactly once in the text. Score: the total number of character comparisons. Higher is better. Can you reach the worst case from the lecture?"
+  },
+  {
+    "objectID": "challenges.html#e3-the-tallest-tree-and-the-bushiest-tree",
+    "href": "challenges.html#e3-the-tallest-tree-and-the-bushiest-tree",
+    "title": "Challenges",
+    "section": "E3 · The tallest tree and the bushiest tree",
+    "text": "E3 · The tallest tree and the bushiest tree\nInsert the keys one at a time, in your order, into an empty binary search tree (Levitin 4.5). Inserting a key at depth d costs d comparisons.\nSubmit: after the nickname line, a line board: tall or board: bushy, then the numbers 1 to 1023, each exactly once, in any order (separated by spaces or line breaks). Score: the total number of comparisons. There are two leaderboards: the tallest tree (highest total) and the bushiest tree (lowest total). Send one file for each board if you want to try both."
+  },
+  {
+    "objectID": "challenges.html#e4-jam-the-hash-table",
+    "href": "challenges.html#e4-jam-the-hash-table",
+    "title": "Challenges",
+    "section": "E4 · Jam the hash table",
+    "text": "E4 · Jam the hash table\nEach word gets a hash value by Horner’s rule (Levitin 6.5), with a = 1, b = 2, …, z = 26 and base 31, taken mod 101: h(w) = ((…((c₁ · 31 + c₂) · 31 + c₃) …) · 31 + cₖ) mod 101. The words are inserted in your order into an empty table of 101 cells with linear probing (Levitin 7.3): if a cell is taken, try the next one, wrapping around. Every cell inspected counts as one probe.\nSubmit: exactly 50 different words of 1-12 lowercase letters (a-z). Score: the total number of probes for all 50 insertions. Higher is better."
+  },
+  {
+    "objectID": "challenges.html#e5-coins-that-fool-greedy",
+    "href": "challenges.html#e5-coins-that-fool-greedy",
+    "title": "Challenges",
+    "section": "E5 · Coins that fool greedy",
+    "text": "E5 · Coins that fool greedy\nGreedy change-making always takes the largest coin that fits. For the coins 1, 5, 10 and 25 this is always optimal; for 1, 3 and 4 it is not (6 = 4 + 1 + 1 by greedy, but 3 + 3 uses only two coins).\nSubmit: 3 to 6 different coin values between 1 and 100, including 1. Score: the number of amounts from 1 to 200 for which greedy uses more coins than the optimum (found by the dynamic-programming algorithm of Levitin 8.1). Higher is better; ties are broken by the total number of extra coins."
+  },
+  {
+    "objectID": "challenges.html#e6-fool-the-nearest-neighbour",
+    "href": "challenges.html#e6-fool-the-nearest-neighbour",
+    "title": "Challenges",
+    "section": "E6 · Fool the nearest neighbour",
+    "text": "E6 · Fool the nearest neighbour\nThe nearest-neighbour heuristic for the travelling salesman problem (Levitin 12.3) starts at the first point and always goes to the closest unvisited point (ties go to the point listed first), then returns to the start.\nSubmit: 10 different points with whole-number coordinates from 0 to 100, as 20 numbers x₁ y₁ x₂ y₂ .... The first point is the start. Score: the length of the nearest-neighbour tour divided by the length of the shortest possible tour. Higher is better."
+  },
+  {
+    "objectID": "challenges.html#the-delivery-route-challenge-lecture-5-to-the-last-exercise-session",
+    "href": "challenges.html#the-delivery-route-challenge-lecture-5-to-the-last-exercise-session",
+    "title": "Challenges",
+    "section": "The delivery-route challenge (Lecture 5 to the last exercise session)",
+    "text": "The delivery-route challenge (Lecture 5 to the last exercise session)\nThe parcel service has a depot and 200 drops in a synthetic area of about 20 × 14 km. The coordinates are in the file instance.txt published with this challenge: one line per point, id x y, where id 0 is the depot. Distances are straight lines (Euclidean).\nSubmit: the order in which to visit the drops: the numbers 1 to 200, each exactly once. The route starts and ends at the depot. Score: the total route length in km. Lower is better.\nTwo reference numbers are published with the instance: a lower bound (no route can be shorter than the minimum spanning tree of the points, a fact you will meet in Lectures 12 and 15) and the length of the nearest-neighbour route. The leaderboard also shows each route’s gap to the lower bound. Anything goes: exhaustive search on pieces, greedy ideas, local improvements, your own heuristics. In the last exercise session, volunteers can show how they built their route."
+  },
+  {
+    "objectID": "challenges.html#practice-problems-on-kattis",
+    "href": "challenges.html#practice-problems-on-kattis",
+    "title": "Challenges",
+    "section": "Practice problems on Kattis",
+    "text": "Practice problems on Kattis\nFor classic “write a program and let a judge test it” practice, the per-session list of problems on open.kattis.com is published with these challenges. A Kattis account is optional; if you create one, you may use a nickname."
+  },
+  {
+    "objectID": "kattis.html",
+    "href": "kattis.html",
+    "title": "Kattis practice",
+    "section": "",
+    "text": "Optional practice on open.kattis.com, a free online judge: you submit a program, and it is run on hidden tests with a time limit. Kattis accepts both C and Haskell. Creating an account is optional; if you create one, you may use a nickname.\nA “Time Limit Exceeded” verdict is often the lecture’s point in action: the program is correct, but its efficiency class is too high for the input size. Before you submit, estimate the number of basic operations for the largest input the problem allows.\nSolutions to public problems are easy to find online. Looking one up gives you an “Accepted” verdict, not the skill; the problems are here so you can practise it yourself.\nDifficulty is Kattis’s own label. Stretch problems are harder than the course requires."
+  },
+  {
+    "objectID": "kattis.html#e1-efficiency-lectures-1-3",
+    "href": "kattis.html#e1-efficiency-lectures-1-3",
+    "title": "Kattis practice",
+    "section": "E1 · Efficiency (Lectures 1-3)",
+    "text": "E1 · Efficiency (Lectures 1-3)\n\n\n\nProblem\nDifficulty\nWhat it practises\n\n\n\n\nCold-puter Science\nEasy 1.2\nA first submission: one pass, one counter\n\n\nSum Kind of Problem\nEasy 1.4\nClosed-form sums instead of loops (Section 2.3)\n\n\nA Different Problem\nEasy 2.1\nReading until end of input; 64-bit integers in C"
+  },
+  {
+    "objectID": "kattis.html#e2-brute-force-exhaustive-search-and-graph-traversal-lectures-4-5",
+    "href": "kattis.html#e2-brute-force-exhaustive-search-and-graph-traversal-lectures-4-5",
+    "title": "Kattis practice",
+    "section": "E2 · Brute force, exhaustive search and graph traversal (Lectures 4-5)",
+    "text": "E2 · Brute force, exhaustive search and graph traversal (Lectures 4-5)\n\n\n\nProblem\nDifficulty\nWhat it practises\n\n\n\n\nDice Cup\nEasy 1.4\nEnumerating every pair\n\n\nReachable Roads\nEasy 1.6\nConnected components with DFS\n\n\nCounting Stars\nEasy 2.2\nDFS (flood fill) on a grid\n\n\nGrid\nEasy 2.3\nBFS for the fewest moves\n\n\n4 thought\nEasy 2.5\nExhaustive search over all expressions"
+  },
+  {
+    "objectID": "kattis.html#e3-decrease-and-conquer-and-divide-and-conquer-lectures-6-8",
+    "href": "kattis.html#e3-decrease-and-conquer-and-divide-and-conquer-lectures-6-8",
+    "title": "Kattis practice",
+    "section": "E3 · Decrease-and-conquer and divide-and-conquer (Lectures 6-8)",
+    "text": "E3 · Decrease-and-conquer and divide-and-conquer (Lectures 6-8)\n\n\n\nProblem\nDifficulty\nWhat it practises\n\n\n\n\nSort of Sorting\nEasy 1.6\nStable sorting with a comparator (C’s qsort is not stable: why does that matter here?)\n\n\nPivot\nEasy 1.9\nThe partition property, checked in linear time\n\n\nBuild Dependencies\nMedium 3.4, stretch\nTopological sorting\n\n\nBinary search tree\nMedium 3.3, stretch\nWhy plain insertion is too slow for sorted input, and what to do instead"
+  },
+  {
+    "objectID": "kattis.html#e4-transform-and-conquer-space-time-trade-offs-dynamic-programming-lectures-9-11",
+    "href": "kattis.html#e4-transform-and-conquer-space-time-trade-offs-dynamic-programming-lectures-9-11",
+    "title": "Kattis practice",
+    "section": "E4 · Transform-and-conquer, space-time trade-offs, dynamic programming (Lectures 9-11)",
+    "text": "E4 · Transform-and-conquer, space-time trade-offs, dynamic programming (Lectures 9-11)\n\n\n\nProblem\nDifficulty\nWhat it practises\n\n\n\n\nAkcija\nEasy 1.4\nPresorting makes the best choice obvious\n\n\nKnapsack\nEasy 2.4\nThe 0/1 knapsack table with recovery of the chosen items\n\n\nWalrus Weights\nEasy 2.4\nSubset sums as a dynamic-programming table\n\n\nRestaurant Orders\nMedium 3.1, stretch\nCounting solutions in a DP table and recovering the unique one"
+  },
+  {
+    "objectID": "kattis.html#e5-greedy-algorithms-and-iterative-improvement-lectures-12-13",
+    "href": "kattis.html#e5-greedy-algorithms-and-iterative-improvement-lectures-12-13",
+    "title": "Kattis practice",
+    "section": "E5 · Greedy algorithms and iterative improvement (Lectures 12-13)",
+    "text": "E5 · Greedy algorithms and iterative improvement (Lectures 12-13)\n\n\n\nProblem\nDifficulty\nWhat it practises\n\n\n\n\nNatjecanje\nEasy 1.7\nA greedy rule, checked against brute force (there are at most 10 teams)\n\n\nSquare Peg in a Round Hole\nEasy 2.0\nSorting, then greedy matching\n\n\nPaintball\nEasy 2.5\nBipartite matching\n\n\nMaximum Flow\nMedium 3.1, stretch\nMaximum flow with augmenting paths"
+  },
+  {
+    "objectID": "kattis.html#e6-limits-and-coping-with-them-lectures-14-15",
+    "href": "kattis.html#e6-limits-and-coping-with-them-lectures-14-15",
+    "title": "Kattis practice",
+    "section": "E6 · Limits and coping with them (Lectures 14-15)",
+    "text": "E6 · Limits and coping with them (Lectures 14-15)\nNo Kattis set this week: the backtracking, branch-and-bound and travelling-salesman techniques of Lecture 15 are options in the individual assignment, so practise them in the E6 challenge and the delivery-route challenge instead."
+  },
+  {
+    "objectID": "steppers.html",
+    "href": "steppers.html",
+    "title": "Step through the algorithms",
+    "section": "",
+    "text": "Each page traces one algorithm from the course book on a small instance, one line at a time, with the variables and the count of basic operations. Use Next step, Back and Play."
+  },
+  {
+    "objectID": "steppers.html#lecture-1-algorithms-and-problem-solving",
+    "href": "steppers.html#lecture-1-algorithms-and-problem-solving",
+    "title": "Step through the algorithms",
+    "section": "Lecture 1: Algorithms and problem solving",
+    "text": "Lecture 1: Algorithms and problem solving\n\nConsecutive integer checking (60, 0)\nConsecutive integer checking (60, 24)\nEuclid(60, 24)\nEuclid(832040, 514229)\nSieve(25)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Algorithms (TAIK12) · Challenges and steppers",
+    "section": "",
+    "text": "Optional, ungraded challenges, practice problems and step-by-step algorithm traces for the Algorithms course at Jönköping University. Nicknames only.\n\nSteppers: watch an algorithm run line by line.\nChallenges: optional, ungraded puzzles; hand in through Canvas with a nickname.\nKattis practice: public problems with an automatic judge.\nLeaderboards: nicknames only.\n\nUpdated 2026-11-24."
+  }
+]
