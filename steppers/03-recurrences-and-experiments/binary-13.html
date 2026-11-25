@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binary(13) · step by step</title>
+<style>
+:root { --ink:#3F3F3F; --purple:#951A80; --purple-light:#F3E8F2; --teal:#2C7E91;
+  --teal-light:#E2EFEE; --hl:#FFF3D1; --grey:#757679; --grey-light:#EAEAEA; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff; }
+main { max-width:1100px; margin:0 auto; padding:24px 16px 40px; }
+h1 { font-size:28px; margin:0 0 4px; }
+.src { color:var(--teal); font-weight:bold; margin:0 0 18px; }
+.grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+.panel { border:3px solid var(--purple-light); border-radius:14px; padding:16px; }
+ol.code { font-family:"Courier New",monospace; font-size:18px; margin:0; padding-left:2.6em; }
+ol.code li { padding:3px 8px; border-radius:6px; white-space:pre; }
+ol.code li.now { background:var(--hl); outline:2px solid #C98B00; }
+.kw { font-weight:bold; }
+.cmt { font-family:"Courier New",monospace; font-size:16px; color:var(--grey); font-style:italic; margin:0 0 8px; white-space:pre-line; }
+table { border-collapse:collapse; width:100%; font-size:18px; }
+th, td { border-bottom:1px solid var(--grey-light); padding:6px 8px; text-align:right; }
+th { color:var(--purple); text-align:right; }
+.counter { font-size:22px; margin:12px 0 4px; }
+.counter b { color:var(--purple); font-size:30px; }
+.note { min-height:1.6em; font-style:italic; }
+.controls { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 8px; }
+button { font:inherit; font-size:18px; padding:10px 18px; border-radius:10px; border:2px solid var(--purple);
+  background:#fff; color:var(--purple); cursor:pointer; }
+button.primary { background:var(--purple); color:#fff; }
+button:disabled { opacity:.45; cursor:default; }
+button:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.pos { color:var(--grey); }
+.result { margin-top:10px; font-weight:bold; }
+</style></head>
+<body><nav style="background:#951A80;color:#fff;font:15px/1.4 Arial,sans-serif;padding:10px 18px;display:flex;gap:18px;align-items:center;border-bottom:4px solid #FDC743"><a href="../../steppers.html" style="color:#fff;font-weight:700;text-decoration:none">← All steppers</a><span style="opacity:.85">Algorithms (TAIK12) · Challenges and steppers</span></nav><main>
+<h1>Binary(13)</h1>
+<p class="src">ALGORITHM Binary(n) · Levitin 2.3</p>
+<div class="controls" role="group" aria-label="Step controls">
+  <button id="reset">⏮ Start</button>
+  <button id="back">◀ Back</button>
+  <button id="next" class="primary">Next step ▶</button>
+  <button id="play">▶ Play</button>
+  <span class="pos" id="pos" aria-live="polite"></span>
+</div>
+<div class="grid">
+  <section class="panel" aria-label="Pseudocode"><p class="cmt" id="cmt"></p><ol class="code" id="code"></ol></section>
+  <section class="panel" aria-label="State">
+    <table><thead><tr id="head"></tr></thead><tbody id="vars"></tbody></table>
+    <p class="counter">comparisons n &gt; 1: <b id="count">0</b></p>
+    <p class="note" id="note" aria-live="polite"></p>
+    <p class="result" id="result" hidden>4 binary digits after 4 comparisons (⌊log₂ 13⌋ + 1 = 4)</p>
+  </section>
+</div>
+<p class="pos">Keys: → or space = next step, ← = back. Every value comes from the same run as the lecture's trace table.</p>
+</main>
+<script>
+const T = {"pseudocode": ["count \u2190 1", "while n > 1 do", "    count \u2190 count + 1", "    n \u2190 \u230an/2\u230b", "return count"], "columns": ["n", "count"], "comments": ["//Input: A positive decimal integer n", "//Output: The number of binary digits in n\u2019s binary representation"], "steps": [{"line": 1, "state": {"n": "13", "count": "1"}, "counter": 0, "note": "count = 1"}, {"line": 2, "state": {"n": "13", "count": "1"}, "counter": 1, "note": "13 > 1: yes"}, {"line": 3, "state": {"n": "13", "count": "2"}, "counter": 1, "note": "count = 2"}, {"line": 4, "state": {"n": "6", "count": "2"}, "counter": 1, "note": "n = 6"}, {"line": 2, "state": {"n": "6", "count": "2"}, "counter": 2, "note": "6 > 1: yes"}, {"line": 3, "state": {"n": "6", "count": "3"}, "counter": 2, "note": "count = 3"}, {"line": 4, "state": {"n": "3", "count": "3"}, "counter": 2, "note": "n = 3"}, {"line": 2, "state": {"n": "3", "count": "3"}, "counter": 3, "note": "3 > 1: yes"}, {"line": 3, "state": {"n": "3", "count": "4"}, "counter": 3, "note": "count = 4"}, {"line": 4, "state": {"n": "1", "count": "4"}, "counter": 3, "note": "n = 1"}, {"line": 2, "state": {"n": "1", "count": "4"}, "counter": 4, "note": "1 > 1: no, stop"}, {"line": 5, "state": {"n": "1", "count": "4"}, "counter": 4, "note": "return 4"}]};
+const KW = new Set(["ALGORITHM", "while", "do", "for", "to", "if", "else", "return", "and", "or", "not"]);
+let i = 0, timer = null;
+const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const code = document.getElementById('code');
+T.pseudocode.forEach((line) => {
+  const li = document.createElement('li');
+  const indent = line.length - line.trimStart().length;
+  li.textContent = '';
+  li.append(' '.repeat(indent));
+  line.trim().split(/(\b\w+\b)/).forEach((tok) => {
+    if (KW.has(tok)) { const b = document.createElement('span'); b.className = 'kw'; b.textContent = tok; li.append(b); }
+    else li.append(tok);
+  });
+  code.append(li);
+});
+document.getElementById('cmt').textContent = (T.comments || []).join('\n');
+document.getElementById('head').innerHTML = '<th>variable</th><th>value</th>';
+function show() {
+  const s = T.steps[i];
+  [...code.children].forEach((li, n) => li.classList.toggle('now', n + 1 === s.line));
+  document.getElementById('vars').innerHTML = T.columns.map((c) =>
+    `<tr><td style="text-align:left">${c}</td><td>${s.state[c] ?? '–'}</td></tr>`).join('');
+  document.getElementById('count').textContent = s.counter;
+  document.getElementById('note').textContent = s.note || '';
+  document.getElementById('pos').textContent = `step ${i} of ${T.steps.length - 1} · line ${s.line}`;
+  document.getElementById('back').disabled = i === 0;
+  document.getElementById('next').disabled = i === T.steps.length - 1;
+  document.getElementById('result').hidden = i !== T.steps.length - 1;
+  if (i === T.steps.length - 1) stop();
+}
+function stop() { if (timer) { clearInterval(timer); timer = null; } document.getElementById('play').textContent = '▶ Play'; }
+document.getElementById('next').onclick = () => { if (i < T.steps.length - 1) { i++; show(); } };
+document.getElementById('back').onclick = () => { stop(); if (i > 0) { i--; show(); } };
+document.getElementById('reset').onclick = () => { stop(); i = 0; show(); };
+const play = document.getElementById('play');
+if (reduce) { play.disabled = true; play.title = 'Play is off because your system asks for reduced motion'; }
+play.onclick = () => {
+  if (timer) { stop(); return; }
+  if (i === T.steps.length - 1) i = 0;
+  play.textContent = '⏸ Pause';
+  timer = setInterval(() => { if (i < T.steps.length - 1) { i++; show(); } else stop(); }, 1100);
+};
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); document.getElementById('next').click(); }
+  if (e.key === 'ArrowLeft') document.getElementById('back').click();
+});
+show();
+</script></body></html>

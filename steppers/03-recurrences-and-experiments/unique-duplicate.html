@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniqueElements(A), n = 5 · step by step</title>
+<style>
+:root { --ink:#3F3F3F; --purple:#951A80; --purple-light:#F3E8F2; --teal:#2C7E91;
+  --teal-light:#E2EFEE; --hl:#FFF3D1; --grey:#757679; --grey-light:#EAEAEA; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff; }
+main { max-width:1100px; margin:0 auto; padding:24px 16px 40px; }
+h1 { font-size:28px; margin:0 0 4px; }
+.src { color:var(--teal); font-weight:bold; margin:0 0 18px; }
+.grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+.panel { border:3px solid var(--purple-light); border-radius:14px; padding:16px; }
+ol.code { font-family:"Courier New",monospace; font-size:18px; margin:0; padding-left:2.6em; }
+ol.code li { padding:3px 8px; border-radius:6px; white-space:pre; }
+ol.code li.now { background:var(--hl); outline:2px solid #C98B00; }
+.kw { font-weight:bold; }
+.cmt { font-family:"Courier New",monospace; font-size:16px; color:var(--grey); font-style:italic; margin:0 0 8px; white-space:pre-line; }
+table { border-collapse:collapse; width:100%; font-size:18px; }
+th, td { border-bottom:1px solid var(--grey-light); padding:6px 8px; text-align:right; }
+th { color:var(--purple); text-align:right; }
+.counter { font-size:22px; margin:12px 0 4px; }
+.counter b { color:var(--purple); font-size:30px; }
+.note { min-height:1.6em; font-style:italic; }
+.controls { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 8px; }
+button { font:inherit; font-size:18px; padding:10px 18px; border-radius:10px; border:2px solid var(--purple);
+  background:#fff; color:var(--purple); cursor:pointer; }
+button.primary { background:var(--purple); color:#fff; }
+button:disabled { opacity:.45; cursor:default; }
+button:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.pos { color:var(--grey); }
+.result { margin-top:10px; font-weight:bold; }
+</style></head>
+<body><nav style="background:#951A80;color:#fff;font:15px/1.4 Arial,sans-serif;padding:10px 18px;display:flex;gap:18px;align-items:center;border-bottom:4px solid #FDC743"><a href="../../steppers.html" style="color:#fff;font-weight:700;text-decoration:none">← All steppers</a><span style="opacity:.85">Algorithms (TAIK12) · Challenges and steppers</span></nav><main>
+<h1>UniqueElements(A), n = 5</h1>
+<p class="src">ALGORITHM UniqueElements(A[0..n − 1]) · Levitin 2.3</p>
+<div class="controls" role="group" aria-label="Step controls">
+  <button id="reset">⏮ Start</button>
+  <button id="back">◀ Back</button>
+  <button id="next" class="primary">Next step ▶</button>
+  <button id="play">▶ Play</button>
+  <span class="pos" id="pos" aria-live="polite"></span>
+</div>
+<div class="grid">
+  <section class="panel" aria-label="Pseudocode"><p class="cmt" id="cmt"></p><ol class="code" id="code"></ol></section>
+  <section class="panel" aria-label="State">
+    <table><thead><tr id="head"></tr></thead><tbody id="vars"></tbody></table>
+    <p class="counter">comparisons: <b id="count">0</b></p>
+    <p class="note" id="note" aria-live="polite"></p>
+    <p class="result" id="result" hidden>false (a duplicate) after 6 comparisons</p>
+  </section>
+</div>
+<p class="pos">Keys: → or space = next step, ← = back. Every value comes from the same run as the lecture's trace table.</p>
+</main>
+<script>
+const T = {"pseudocode": ["for i \u2190 0 to n \u2212 2 do", "    for j \u2190 i + 1 to n \u2212 1 do", "        if A[i] = A[j] return false", "return true"], "columns": ["i", "j", "A[i]", "A[j]"], "comments": ["//Determines whether all the elements in a given array are distinct", "//Input: An array A[0..n \u2212 1]", "//Output: Returns \u201ctrue\u201d if all the elements in A are distinct", "//        and \u201cfalse\u201d otherwise"], "steps": [{"line": 1, "state": {"i": "0", "j": "\u2013", "A[i]": "48213", "A[j]": "\u2013"}, "counter": 0, "note": "i = 0"}, {"line": 2, "state": {"i": "0", "j": "1", "A[i]": "48213", "A[j]": "17055"}, "counter": 0, "note": "j = 1"}, {"line": 3, "state": {"i": "0", "j": "1", "A[i]": "48213", "A[j]": "17055"}, "counter": 1, "note": "48213 \u2260 17055"}, {"line": 2, "state": {"i": "0", "j": "2", "A[i]": "48213", "A[j]": "90342"}, "counter": 1, "note": "j = 2"}, {"line": 3, "state": {"i": "0", "j": "2", "A[i]": "48213", "A[j]": "90342"}, "counter": 2, "note": "48213 \u2260 90342"}, {"line": 2, "state": {"i": "0", "j": "3", "A[i]": "48213", "A[j]": "17055"}, "counter": 2, "note": "j = 3"}, {"line": 3, "state": {"i": "0", "j": "3", "A[i]": "48213", "A[j]": "17055"}, "counter": 3, "note": "48213 \u2260 17055"}, {"line": 2, "state": {"i": "0", "j": "4", "A[i]": "48213", "A[j]": "64120"}, "counter": 3, "note": "j = 4"}, {"line": 3, "state": {"i": "0", "j": "4", "A[i]": "48213", "A[j]": "64120"}, "counter": 4, "note": "48213 \u2260 64120"}, {"line": 1, "state": {"i": "1", "j": "\u2013", "A[i]": "17055", "A[j]": "\u2013"}, "counter": 4, "note": "i = 1"}, {"line": 2, "state": {"i": "1", "j": "2", "A[i]": "17055", "A[j]": "90342"}, "counter": 4, "note": "j = 2"}, {"line": 3, "state": {"i": "1", "j": "2", "A[i]": "17055", "A[j]": "90342"}, "counter": 5, "note": "17055 \u2260 90342"}, {"line": 2, "state": {"i": "1", "j": "3", "A[i]": "17055", "A[j]": "17055"}, "counter": 5, "note": "j = 3"}, {"line": 3, "state": {"i": "1", "j": "3", "A[i]": "17055", "A[j]": "17055"}, "counter": 6, "note": "A[1] = A[3] = 17055: return false"}]};
+const KW = new Set(["ALGORITHM", "while", "do", "for", "to", "if", "else", "return", "and", "or", "not"]);
+let i = 0, timer = null;
+const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const code = document.getElementById('code');
+T.pseudocode.forEach((line) => {
+  const li = document.createElement('li');
+  const indent = line.length - line.trimStart().length;
+  li.textContent = '';
+  li.append(' '.repeat(indent));
+  line.trim().split(/(\b\w+\b)/).forEach((tok) => {
+    if (KW.has(tok)) { const b = document.createElement('span'); b.className = 'kw'; b.textContent = tok; li.append(b); }
+    else li.append(tok);
+  });
+  code.append(li);
+});
+document.getElementById('cmt').textContent = (T.comments || []).join('\n');
+document.getElementById('head').innerHTML = '<th>variable</th><th>value</th>';
+function show() {
+  const s = T.steps[i];
+  [...code.children].forEach((li, n) => li.classList.toggle('now', n + 1 === s.line));
+  document.getElementById('vars').innerHTML = T.columns.map((c) =>
+    `<tr><td style="text-align:left">${c}</td><td>${s.state[c] ?? '–'}</td></tr>`).join('');
+  document.getElementById('count').textContent = s.counter;
+  document.getElementById('note').textContent = s.note || '';
+  document.getElementById('pos').textContent = `step ${i} of ${T.steps.length - 1} · line ${s.line}`;
+  document.getElementById('back').disabled = i === 0;
+  document.getElementById('next').disabled = i === T.steps.length - 1;
+  document.getElementById('result').hidden = i !== T.steps.length - 1;
+  if (i === T.steps.length - 1) stop();
+}
+function stop() { if (timer) { clearInterval(timer); timer = null; } document.getElementById('play').textContent = '▶ Play'; }
+document.getElementById('next').onclick = () => { if (i < T.steps.length - 1) { i++; show(); } };
+document.getElementById('back').onclick = () => { stop(); if (i > 0) { i--; show(); } };
+document.getElementById('reset').onclick = () => { stop(); i = 0; show(); };
+const play = document.getElementById('play');
+if (reduce) { play.disabled = true; play.title = 'Play is off because your system asks for reduced motion'; }
+play.onclick = () => {
+  if (timer) { stop(); return; }
+  if (i === T.steps.length - 1) i = 0;
+  play.textContent = '⏸ Pause';
+  timer = setInterval(() => { if (i < T.steps.length - 1) { i++; show(); } else stop(); }, 1100);
+};
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); document.getElementById('next').click(); }
+  if (e.key === 'ArrowLeft') document.getElementById('back').click();
+});
+show();
+</script></body></html>
