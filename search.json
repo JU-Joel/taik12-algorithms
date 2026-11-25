@@ -149,8 +149,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Algorithms (TAIK12) · Challenges and steppers",
+    "title": "See it run. Count it. Beat it.",
     "section": "",
-    "text": "Optional, ungraded challenges, practice problems and step-by-step algorithm traces for the Algorithms course at Jönköping University. Nicknames only.\n\nSteppers: watch an algorithm run line by line.\nChallenges: optional, ungraded puzzles; hand in through Canvas with a nickname.\nKattis practice: public problems with an automatic judge.\nLeaderboards: nicknames only.\n\nUpdated 2026-11-25."
+    "text": "JÖNKÖPING UNIVERSITY · SCHOOL OF ENGINEERING\n\nOptional, ungraded challenges, practice problems and step-by-step algorithm traces for the Algorithms course at Jönköping University. Nicknames only."
+  },
+  {
+    "objectID": "index.html#the-plan",
+    "href": "index.html#the-plan",
+    "title": "See it run. Count it. Beat it.",
+    "section": "The plan",
+    "text": "The plan\n\n\n\nSession\nWeek\nLectures\nChallenge\n\n\n\n\nE1\n3\n1-3\nMake Euclid work hardest\n\n\nE2\n4\n4-5\nThe slowest search\n\n\nE3\n5\n6-8\nThe tallest and the bushiest tree\n\n\nE4\n7\n9-11\nJam the hash table\n\n\nE5\n8\n12-13\nCoins that fool greedy\n\n\nE6\n9\n14-15\nFool the nearest neighbour\n\n\nL5-E6\n3-9\n5-15\nThe delivery route (runs all course)\n\n\n\nUpdated 2026-11-25."
   }
 ]
