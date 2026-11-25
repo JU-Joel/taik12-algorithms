@@ -1,94 +1,101 @@
 [
   {
-    "objectID": "leaderboards.html",
-    "href": "leaderboards.html",
-    "title": "Leaderboards",
+    "objectID": "session-e4.html",
+    "href": "session-e4.html",
+    "title": "E4 · week 7",
     "section": "",
-    "text": "Nicknames only. Boards are updated after each exercise session.\nNo leaderboard has been published yet. The first one appears after exercise session E1."
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
   },
   {
-    "objectID": "challenges.html",
-    "href": "challenges.html",
-    "title": "Challenges",
+    "objectID": "session-e4.html#in-the-room-your-two-hours",
+    "href": "session-e4.html#in-the-room-your-two-hours",
+    "title": "E4 · week 7",
     "section": "",
-    "text": "These challenges are optional, ungraded and just for fun. They do not affect your grade, nothing is awarded, and you can skip them entirely. They are a chance to play with the ideas from the lectures: push an algorithm to its worst case, find where a clever shortcut fails, and race the class for the shortest delivery route."
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
   },
   {
-    "objectID": "challenges.html#how-it-works",
-    "href": "challenges.html#how-it-works",
-    "title": "Challenges",
-    "section": "How it works",
-    "text": "How it works\n\nEach exercise session opens one short challenge. It stays open until the next session, where the leaderboard is shown and the idea behind the best answers is discussed.\nThe delivery-route challenge runs for most of the course, from Lecture 5 to the last exercise session.\nYou hand in a plain-text file through the ungraded challenge assignment in Canvas. You may resubmit as often as you like; your best valid submission counts.\nNicknames only. The first line of every file is nickname: &lt;name&gt;, using 3-20 letters, digits, _ or -. Choose a nickname that is not your real name. Leaderboards show nicknames only.\nYou submit inputs, not programs: numbers, words, points or a route. The teacher’s checker runs the fixed algorithm described below on your input. Write any helper programs you like, in any language, to find good inputs.\nUse any tools you like, including AI tools. The fun is in understanding why your answer works; be ready to explain it if you share it in class."
+    "objectID": "session-e4.html#during-the-week-pick-what-you-like",
+    "href": "session-e4.html#during-the-week-pick-what-you-like",
+    "title": "E4 · week 7",
+    "section": "During the week: pick what you like",
+    "text": "During the week: pick what you like\nEverything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\nMain challenge\nEach word gets a hash value by Horner’s rule (Levitin 6.5), with a = 1, b = 2, …, z = 26 and base 31, taken mod 101: h(w) = ((…((c₁ · 31 + c₂) · 31 + c₃) …) · 31 + cₖ) mod 101. The words are inserted in your order into an empty table of 101 cells with linear probing (Levitin 7.3): if a cell is taken, try the next one, wrapping around. Every cell inspected counts as one probe.\nSubmit: exactly 50 different words of 1-12 lowercase letters (a-z). Score: the total number of probes for all 50 insertions. Higher is better.\n\nHand in: Jam the hash table\n\n\n\n\n\nKattis\nWrite a program and let Kattis judge it. Join the session’s contest so your solves count on the season table (give your Kattis name once on My nickname).\n\n\nakcija\nknapsack\nwalrusweights\norders"
   },
   {
-    "objectID": "challenges.html#e1-make-euclid-work-hardest-two-parts",
-    "href": "challenges.html#e1-make-euclid-work-hardest-two-parts",
-    "title": "Challenges",
-    "section": "E1 · Make Euclid work hardest (two parts)",
-    "text": "E1 · Make Euclid work hardest (two parts)\nEuclid’s algorithm (Levitin 1.1) computes gcd(m, n) by repeating r ← m mod n; m ← n; n ← r while n ≠ 0. Which pair of numbers makes it divide most often?\nPart 1 (small numbers). Find the pair with 1 ≤ n ≤ m ≤ 100 that needs the most divisions. There are only 5050 pairs: a short program that tries them all, counting divisions as in Lecture 1, finds the answer in a blink. Submit m n as one file to the part 1 challenge.\nPart 2 (huge numbers). The same question with 1 ≤ n ≤ m ≤ 1 000 000 000. Now there are about 5 · 10¹⁷ pairs; trying them all would take longer than anyone has. You already know where to look: Lectures 1 and 2 measured that consecutive Fibonacci numbers make Euclid work hardest. The challenge is to apply that exactly. Which consecutive pair is the largest that still fits under the bound, and how many divisions does it take? Check your part 1 answer first: is it a consecutive Fibonacci pair, and what are all the quotients along the way? (Lecture 1’s break pair (832040, 514229) is valid here, but far from the best.) Submit m n as a separate file to the part 2 challenge.\nScore: the number of mod operations Euclid performs. Higher is better. Each part has its own leaderboard.\nThis is the course in miniature: part 1 is solved by computing, part 2 by applying a pattern exactly where computing is hopeless. Lecture 3 proves that no pair below the bound beats the best Fibonacci pair."
+    "objectID": "session-e1.html",
+    "href": "session-e1.html",
+    "title": "E1 · week 3",
+    "section": "",
+    "text": "This week’s focus. Count before you code: trace an algorithm, count its basic operations exactly, and say how the count grows."
   },
   {
-    "objectID": "challenges.html#e2-the-slowest-search",
-    "href": "challenges.html#e2-the-slowest-search",
-    "title": "Challenges",
-    "section": "E2 · The slowest search",
-    "text": "E2 · The slowest search\nBrute-force string matching (Levitin 3.2) tries every shift of the pattern along the text and compares characters from left to right until a mismatch. The checker counts every character comparison over all shifts.\nSubmit: two lines: a text of exactly 1000 characters and a pattern of exactly 10 characters, both using only a and b. The pattern must occur exactly once in the text. Score: the total number of character comparisons. Higher is better. Can you reach the worst case from the lecture?"
+    "objectID": "session-e1.html#in-the-room-your-two-hours",
+    "href": "session-e1.html#in-the-room-your-two-hours",
+    "title": "E1 · week 3",
+    "section": "In the room: your two hours",
+    "text": "In the room: your two hours\n0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: Trace race. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms.\n\nThe sprint: Trace race\nWork as a table team. Four short questions; every correct part is a point and the clock breaks ties. Paper and pencil only: the point is that you can do it by hand."
   },
   {
-    "objectID": "challenges.html#e3-the-tallest-tree-and-the-bushiest-tree",
-    "href": "challenges.html#e3-the-tallest-tree-and-the-bushiest-tree",
-    "title": "Challenges",
-    "section": "E3 · The tallest tree and the bushiest tree",
-    "text": "E3 · The tallest tree and the bushiest tree\nInsert the keys one at a time, in your order, into an empty binary search tree (Levitin 4.5). Inserting a key at depth d costs d comparisons.\nSubmit: after the nickname line, a line board: tall or board: bushy, then the numbers 1 to 1023, each exactly once, in any order (separated by spaces or line breaks). Score: the total number of comparisons. There are two leaderboards: the tallest tree (highest total) and the bushiest tree (lowest total). Send one file for each board if you want to try both."
+    "objectID": "session-e1.html#during-the-week-pick-what-you-like",
+    "href": "session-e1.html#during-the-week-pick-what-you-like",
+    "title": "E1 · week 3",
+    "section": "During the week: pick what you like",
+    "text": "During the week: pick what you like\nEverything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\nMain challenge\nEuclid’s algorithm (Levitin 1.1) computes gcd(m, n) by repeating r ← m mod n; m ← n; n ← r while n ≠ 0. Which pair of numbers makes it divide most often?\nPart 1 (small numbers). Find the pair with 1 ≤ n ≤ m ≤ 100 that needs the most divisions. There are only 5050 pairs: a short program that tries them all, counting divisions as in Lecture 1, finds the answer in a blink. Submit m n in the part 1 form below.\nPart 2 (huge numbers). The same question with 1 ≤ n ≤ m ≤ 1 000 000 000. Now there are about 5 · 10¹⁷ pairs; trying them all would take longer than anyone has. You already know where to look: Lectures 1 and 2 measured that consecutive Fibonacci numbers make Euclid work hardest. The challenge is to apply that exactly. Which consecutive pair is the largest that still fits under the bound, and how many divisions does it take? Check your part 1 answer first: is it a consecutive Fibonacci pair, and what are all the quotients along the way? (Lecture 1’s break pair (832040, 514229) is valid here, but far from the best.) Submit m n in the part 2 form.\nScore: the number of mod operations Euclid performs. Higher is better. Each part has its own leaderboard.\nThis is the course in miniature: part 1 is solved by computing, part 2 by applying a pattern exactly where computing is hopeless. Lecture 3 proves that no pair below the bound beats the best Fibonacci pair.\n\nHand in: Make Euclid work hardest, part 1 (up to 100)\n\n\n\n\nHand in: Make Euclid work hardest, part 2 (up to 10⁹)\n\n\n\n\n\nBadges\nShort puzzles with one exact answer each. Work it out first; you have ten tries per badge.\n\nEuclid by hand\nHow many divisions does Euclid’s algorithm make for gcd(31415, 14142)? Trace it on paper first.\nSource: Levitin, Exercises 1.1, problem 6.\n\n\n\nLocker doors (book puzzle of the week)\n1000 lockers, all closed. On pass i (i = 1, …, 1000) you toggle every i-th locker. How many lockers are open at the end? Find the pattern on 10 lockers by hand before you compute anything.\nSource: Levitin, Exercises 1.1, problem 12.\n\n\n\nGloves in the dark (book puzzle of the week)\n22 gloves: 5 pairs red, 4 pairs yellow, 2 pairs green. How many gloves must you take to be sure of one matching pair in the best case, and in the worst case? Answer with two numbers: best worst.\nSource: Levitin, Exercises 2.1, problem 4a.\n\n\n\nThe average missing sock\nYou wash 5 different pairs of socks and 2 of the 10 socks disappear, every sock equally likely. How many complete pairs do you have on average? Give an exact fraction.\nSource: Levitin, Exercises 2.1, problem 4b.\n\n\n\nSearch on average\nSequential search on n = 199 different keys; the search succeeds with probability 1/4, and a present key is equally likely at every position. How many key comparisons on average? (Exact value.)\nSource: Lecture 2, the average case.\n\n\n\nHow big is a billion?\nHow many bits does the number 1 000 000 000 have?\nSource: Lecture 2, input size of a number.\n\n\n\nCount the inner loop\nfor i ← 1 to n do / for j ← 1 to i do / count ← count + 1. What is count after the loops for n = 1000?\nSource: 2026 exercise sheet 1, task 6.\n\n\n\nUnroll it\nx(n) = x(n − 1) + 5 for n &gt; 1, and x(1) = 0. What is x(100)?\nSource: 2026 exercise sheet 1, task 4.\n\n\n\n\nKattis\nWrite a program and let Kattis judge it. Join the session’s contest so your solves count on the season table (give your Kattis name once on My nickname).\n\n\ncold\nsumkindofproblem\ndifferent\nplanina\npot\ntimeloop"
   },
   {
-    "objectID": "challenges.html#e4-jam-the-hash-table",
-    "href": "challenges.html#e4-jam-the-hash-table",
-    "title": "Challenges",
-    "section": "E4 · Jam the hash table",
-    "text": "E4 · Jam the hash table\nEach word gets a hash value by Horner’s rule (Levitin 6.5), with a = 1, b = 2, …, z = 26 and base 31, taken mod 101: h(w) = ((…((c₁ · 31 + c₂) · 31 + c₃) …) · 31 + cₖ) mod 101. The words are inserted in your order into an empty table of 101 cells with linear probing (Levitin 7.3): if a cell is taken, try the next one, wrapping around. Every cell inspected counts as one probe.\nSubmit: exactly 50 different words of 1-12 lowercase letters (a-z). Score: the total number of probes for all 50 insertions. Higher is better."
+    "objectID": "session-route.html",
+    "href": "session-route.html",
+    "title": "Delivery route",
+    "section": "",
+    "text": "Everything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\n\nThe parcel service has a depot and 200 drops in a synthetic area of about 20 × 14 km. The coordinates are in the file routing-instance.txt: one line per point, id x y, where id 0 is the depot. Distances are straight lines (Euclidean).\nSubmit: the order in which to visit the drops: the numbers 1 to 200, each exactly once. The route starts and ends at the depot. Score: the total route length in km. Lower is better.\nTwo reference numbers are published with the instance: a lower bound (no route can be shorter than the minimum spanning tree of the points, a fact you will meet in Lectures 12 and 15) and the length of the nearest-neighbour route. The leaderboard also shows each route’s gap to the lower bound. Anything goes: exhaustive search on pieces, greedy ideas, local improvements, your own heuristics. In the last exercise session, volunteers can show how they built their route."
   },
   {
-    "objectID": "challenges.html#e5-coins-that-fool-greedy",
-    "href": "challenges.html#e5-coins-that-fool-greedy",
-    "title": "Challenges",
-    "section": "E5 · Coins that fool greedy",
-    "text": "E5 · Coins that fool greedy\nGreedy change-making always takes the largest coin that fits. For the coins 1, 5, 10 and 25 this is always optimal; for 1, 3 and 4 it is not (6 = 4 + 1 + 1 by greedy, but 3 + 3 uses only two coins).\nSubmit: 3 to 6 different coin values between 1 and 100, including 1. Score: the number of amounts from 1 to 200 for which greedy uses more coins than the optimum (found by the dynamic-programming algorithm of Levitin 8.1). Higher is better; ties are broken by the total number of extra coins."
+    "objectID": "session-route.html#during-the-week-pick-what-you-like",
+    "href": "session-route.html#during-the-week-pick-what-you-like",
+    "title": "Delivery route",
+    "section": "",
+    "text": "Everything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\n\nThe parcel service has a depot and 200 drops in a synthetic area of about 20 × 14 km. The coordinates are in the file routing-instance.txt: one line per point, id x y, where id 0 is the depot. Distances are straight lines (Euclidean).\nSubmit: the order in which to visit the drops: the numbers 1 to 200, each exactly once. The route starts and ends at the depot. Score: the total route length in km. Lower is better.\nTwo reference numbers are published with the instance: a lower bound (no route can be shorter than the minimum spanning tree of the points, a fact you will meet in Lectures 12 and 15) and the length of the nearest-neighbour route. The leaderboard also shows each route’s gap to the lower bound. Anything goes: exhaustive search on pieces, greedy ideas, local improvements, your own heuristics. In the last exercise session, volunteers can show how they built their route."
   },
   {
-    "objectID": "challenges.html#e6-fool-the-nearest-neighbour",
-    "href": "challenges.html#e6-fool-the-nearest-neighbour",
-    "title": "Challenges",
-    "section": "E6 · Fool the nearest neighbour",
-    "text": "E6 · Fool the nearest neighbour\nThe nearest-neighbour heuristic for the travelling salesman problem (Levitin 12.3) starts at the first point and always goes to the closest unvisited point (ties go to the point listed first), then returns to the start.\nSubmit: 10 different points with whole-number coordinates from 0 to 100, as 20 numbers x₁ y₁ x₂ y₂ .... The first point is the start. Score: the length of the nearest-neighbour tour divided by the length of the shortest possible tour. Higher is better."
+    "objectID": "me.html",
+    "href": "me.html",
+    "title": "My nickname",
+    "section": "",
+    "text": "Your nickname and personal key are kept in this browser only. Use this page to see your results, to sign in on a new device (type your nickname and key), or to link your Kattis name."
   },
   {
-    "objectID": "challenges.html#the-delivery-route-challenge-lecture-5-to-the-last-exercise-session",
-    "href": "challenges.html#the-delivery-route-challenge-lecture-5-to-the-last-exercise-session",
-    "title": "Challenges",
-    "section": "The delivery-route challenge (Lecture 5 to the last exercise session)",
-    "text": "The delivery-route challenge (Lecture 5 to the last exercise session)\nThe parcel service has a depot and 200 drops in a synthetic area of about 20 × 14 km. The coordinates are in the file instance.txt published with this challenge: one line per point, id x y, where id 0 is the depot. Distances are straight lines (Euclidean).\nSubmit: the order in which to visit the drops: the numbers 1 to 200, each exactly once. The route starts and ends at the depot. Score: the total route length in km. Lower is better.\nTwo reference numbers are published with the instance: a lower bound (no route can be shorter than the minimum spanning tree of the points, a fact you will meet in Lectures 12 and 15) and the length of the nearest-neighbour route. The leaderboard also shows each route’s gap to the lower bound. Anything goes: exhaustive search on pieces, greedy ideas, local improvements, your own heuristics. In the last exercise session, volunteers can show how they built their route."
+    "objectID": "steppers.html",
+    "href": "steppers.html",
+    "title": "Step through the algorithms",
+    "section": "",
+    "text": "Each page traces one algorithm from the course book on a small instance, one line at a time, with the variables and the count of basic operations. Use Next step, Back and Play."
   },
   {
-    "objectID": "challenges.html#practice-problems-on-kattis",
-    "href": "challenges.html#practice-problems-on-kattis",
-    "title": "Challenges",
-    "section": "Practice problems on Kattis",
-    "text": "Practice problems on Kattis\nFor classic “write a program and let a judge test it” practice, the per-session list of problems on open.kattis.com is published with these challenges. A Kattis account is optional; if you create one, you may use a nickname."
+    "objectID": "steppers.html#lecture-1-algorithms-and-problem-solving",
+    "href": "steppers.html#lecture-1-algorithms-and-problem-solving",
+    "title": "Step through the algorithms",
+    "section": "Lecture 1: Algorithms and problem solving",
+    "text": "Lecture 1: Algorithms and problem solving\n\nConsecutive integer checking (60, 0)\nConsecutive integer checking (60, 24)\nEuclid(60, 24)\nEuclid(832040, 514229)\nSieve(25)"
+  },
+  {
+    "objectID": "steppers.html#lecture-2-growth-and-asymptotic-notation",
+    "href": "steppers.html#lecture-2-growth-and-asymptotic-notation",
+    "title": "Step through the algorithms",
+    "section": "Lecture 2: Growth and asymptotic notation",
+    "text": "Lecture 2: Growth and asymptotic notation\n\nSequentialSearch(A, 60000), n = 8\nSequentialSearch(A, 48213), n = 8\nSequentialSearch(A, 50267), n = 8"
   },
   {
     "objectID": "kattis.html",
     "href": "kattis.html",
     "title": "Kattis practice",
     "section": "",
-    "text": "Optional practice on open.kattis.com, a free online judge: you submit a program, and it is run on hidden tests with a time limit. Kattis accepts both C and Haskell. Creating an account is optional; if you create one, you may use a nickname.\nA “Time Limit Exceeded” verdict is often the lecture’s point in action: the program is correct, but its efficiency class is too high for the input size. Before you submit, estimate the number of basic operations for the largest input the problem allows.\nSolutions to public problems are easy to find online. Looking one up gives you an “Accepted” verdict, not the skill; the problems are here so you can practise it yourself.\nDifficulty is Kattis’s own label. Stretch problems are harder than the course requires."
+    "text": "Optional practice on open.kattis.com, a free online judge: you submit a program, and it is run on hidden tests with a time limit. Kattis accepts both C and Haskell. Creating an account is optional; if you create one, you may use a nickname.\nA “Time Limit Exceeded” verdict is often the lecture’s point in action: the program is correct, but its efficiency class is too high for the input size. Before you submit, estimate the number of basic operations for the largest input the problem allows.\nSolutions to public problems are easy to find online. Looking one up gives you an “Accepted” verdict, not the skill; the problems are here so you can practise it yourself.\nDifficulty is Kattis’s own label. Stretch problems are harder than the course requires.\nEach exercise session has its own contest on Open Kattis with these problems; the link is on the session’s page of the challenge site. Join it and give your Kattis name once on the site’s “My nickname” page: your solves then count on the season leaderboard (updated once a day)."
   },
   {
     "objectID": "kattis.html#e1-efficiency-lectures-1-3",
     "href": "kattis.html#e1-efficiency-lectures-1-3",
     "title": "Kattis practice",
     "section": "E1 · Efficiency (Lectures 1-3)",
-    "text": "E1 · Efficiency (Lectures 1-3)\n\n\n\nProblem\nDifficulty\nWhat it practises\n\n\n\n\nCold-puter Science\nEasy 1.2\nA first submission: one pass, one counter\n\n\nSum Kind of Problem\nEasy 1.4\nClosed-form sums instead of loops (Section 2.3)\n\n\nA Different Problem\nEasy 2.1\nReading until end of input; 64-bit integers in C"
+    "text": "E1 · Efficiency (Lectures 1-3)\n\n\n\nProblem\nDifficulty\nWhat it practises\n\n\n\n\nCold-puter Science\nEasy 1.2\nA first submission: one pass, one counter\n\n\nSum Kind of Problem\nEasy 1.4\nClosed-form sums instead of loops (Section 2.3)\n\n\nA Different Problem\nEasy 2.1\nReading until end of input; 64-bit integers in C\n\n\nStuck In A Time Loop\nEasy\nA loop that runs exactly n times: count it\n\n\nPot\nEasy\nPowers and digits: the input size of a number\n\n\nPlanina\nEasy\nFind the growth pattern: the count after n steps, as a formula"
   },
   {
     "objectID": "kattis.html#e2-brute-force-exhaustive-search-and-graph-traversal-lectures-4-5",
@@ -126,25 +133,137 @@
     "text": "E6 · Limits and coping with them (Lectures 14-15)\nNo Kattis set this week: the backtracking, branch-and-bound and travelling-salesman techniques of Lecture 15 are options in the individual assignment, so practise them in the E6 challenge and the delivery-route challenge instead."
   },
   {
-    "objectID": "steppers.html",
-    "href": "steppers.html",
-    "title": "Step through the algorithms",
+    "objectID": "session-e3.html",
+    "href": "session-e3.html",
+    "title": "E3 · week 5",
     "section": "",
-    "text": "Each page traces one algorithm from the course book on a small instance, one line at a time, with the variables and the count of basic operations. Use Next step, Back and Play."
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
   },
   {
-    "objectID": "steppers.html#lecture-1-algorithms-and-problem-solving",
-    "href": "steppers.html#lecture-1-algorithms-and-problem-solving",
-    "title": "Step through the algorithms",
-    "section": "Lecture 1: Algorithms and problem solving",
-    "text": "Lecture 1: Algorithms and problem solving\n\nConsecutive integer checking (60, 0)\nConsecutive integer checking (60, 24)\nEuclid(60, 24)\nEuclid(832040, 514229)\nSieve(25)"
+    "objectID": "session-e3.html#in-the-room-your-two-hours",
+    "href": "session-e3.html#in-the-room-your-two-hours",
+    "title": "E3 · week 5",
+    "section": "",
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
   },
   {
-    "objectID": "steppers.html#lecture-2-growth-and-asymptotic-notation",
-    "href": "steppers.html#lecture-2-growth-and-asymptotic-notation",
-    "title": "Step through the algorithms",
-    "section": "Lecture 2: Growth and asymptotic notation",
-    "text": "Lecture 2: Growth and asymptotic notation\n\nSequentialSearch(A, 60000), n = 8\nSequentialSearch(A, 48213), n = 8\nSequentialSearch(A, 50267), n = 8"
+    "objectID": "session-e3.html#during-the-week-pick-what-you-like",
+    "href": "session-e3.html#during-the-week-pick-what-you-like",
+    "title": "E3 · week 5",
+    "section": "During the week: pick what you like",
+    "text": "During the week: pick what you like\nEverything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\nMain challenge\nInsert the keys one at a time, in your order, into an empty binary search tree (Levitin 4.5). Inserting a key at depth d costs d comparisons.\nSubmit: a first line board: tall or board: bushy, then the numbers 1 to 1023, each exactly once, in any order (separated by spaces or line breaks). Score: the total number of comparisons. There are two leaderboards: the tallest tree (highest total) and the bushiest tree (lowest total). Hand in once in each form if you want to try both.\n\nHand in: The tallest tree\n\n\n\n\nHand in: The bushiest tree\n\n\n\n\n\nKattis\nWrite a program and let Kattis judge it. Join the session’s contest so your solves count on the season table (give your Kattis name once on My nickname).\n\n\nsortofsorting\npivot\nbuilddeps\nbst"
+  },
+  {
+    "objectID": "session-e6.html",
+    "href": "session-e6.html",
+    "title": "E6 · week 9",
+    "section": "",
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
+  },
+  {
+    "objectID": "session-e6.html#in-the-room-your-two-hours",
+    "href": "session-e6.html#in-the-room-your-two-hours",
+    "title": "E6 · week 9",
+    "section": "",
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
+  },
+  {
+    "objectID": "session-e6.html#during-the-week-pick-what-you-like",
+    "href": "session-e6.html#during-the-week-pick-what-you-like",
+    "title": "E6 · week 9",
+    "section": "During the week: pick what you like",
+    "text": "During the week: pick what you like\nEverything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\nMain challenge\nThe nearest-neighbour heuristic for the travelling salesman problem (Levitin 12.3) starts at the first point and always goes to the closest unvisited point (ties go to the point listed first), then returns to the start.\nSubmit: 10 different points with whole-number coordinates from 0 to 100, as 20 numbers x₁ y₁ x₂ y₂ .... The first point is the start. Score: the length of the nearest-neighbour tour divided by the length of the shortest possible tour. Higher is better.\n\nHand in: Fool the nearest neighbour"
+  },
+  {
+    "objectID": "session-e2.html",
+    "href": "session-e2.html",
+    "title": "E2 · week 4",
+    "section": "",
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
+  },
+  {
+    "objectID": "session-e2.html#in-the-room-your-two-hours",
+    "href": "session-e2.html#in-the-room-your-two-hours",
+    "title": "E2 · week 4",
+    "section": "",
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
+  },
+  {
+    "objectID": "session-e2.html#during-the-week-pick-what-you-like",
+    "href": "session-e2.html#during-the-week-pick-what-you-like",
+    "title": "E2 · week 4",
+    "section": "During the week: pick what you like",
+    "text": "During the week: pick what you like\nEverything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\nMain challenge\nBrute-force string matching (Levitin 3.2) tries every shift of the pattern along the text and compares characters from left to right until a mismatch. The checker counts every character comparison over all shifts.\nSubmit: two lines: a text of exactly 1000 characters and a pattern of exactly 10 characters, both using only a and b. The pattern must occur exactly once in the text. Score: the total number of character comparisons. Higher is better. Can you reach the worst case from the lecture?\n\nHand in: The slowest search\n\n\n\n\n\nKattis\nWrite a program and let Kattis judge it. Join the session’s contest so your solves count on the season table (give your Kattis name once on My nickname).\n\n\ndicecup\nreachableroads\ncountingstars\ngrid\n4thought"
+  },
+  {
+    "objectID": "challenges.html",
+    "href": "challenges.html",
+    "title": "Rules",
+    "section": "",
+    "text": "These challenges are optional, ungraded and just for fun. They do not affect your grade, nothing is awarded, and you can skip them entirely. They are a chance to play with the ideas from the lectures: push an algorithm to its worst case, find where a clever shortcut fails, and race the class for the shortest delivery route."
+  },
+  {
+    "objectID": "challenges.html#how-it-works",
+    "href": "challenges.html#how-it-works",
+    "title": "Rules",
+    "section": "How it works",
+    "text": "How it works\n\nEvery exercise session has its own page on the course’s challenge site, with three things to do during the week: a main challenge with a live leaderboard, a handful of badges (short puzzles with one exact answer) and the session’s Kattis problems. In the session itself your table plays a short sprint.\nYou hand in on the site: paste your answer, press Submit, and the checker answers at once: valid or not (and why), your score and your rank. Resubmit as often as you like; your best valid answer counts.\nNicknames only. Pick a nickname (3-20 letters, digits, _ or -) that is not your real name. Your first submission gives you a personal key; the site remembers it in this browser. Save it somewhere: you need it on another device, and nobody else can post under your nickname without it.\nYou submit inputs, not programs: numbers, words, points or a route. The checker runs the fixed algorithm described below on your input. Write any helper programs you like, in any language, to find good inputs.\nUse any tools you like, including AI tools. The fun is in understanding why your answer works; be ready to explain it if you share it in class.\nThe leaderboard is shown at the start of the next session, where someone explains the idea behind a top answer. The delivery-route challenge runs for most of the course, from Lecture 5 to the last exercise session."
+  },
+  {
+    "objectID": "challenges.html#e1-make-euclid-work-hardest-two-parts",
+    "href": "challenges.html#e1-make-euclid-work-hardest-two-parts",
+    "title": "Rules",
+    "section": "E1 · Make Euclid work hardest (two parts)",
+    "text": "E1 · Make Euclid work hardest (two parts)\nEuclid’s algorithm (Levitin 1.1) computes gcd(m, n) by repeating r ← m mod n; m ← n; n ← r while n ≠ 0. Which pair of numbers makes it divide most often?\nPart 1 (small numbers). Find the pair with 1 ≤ n ≤ m ≤ 100 that needs the most divisions. There are only 5050 pairs: a short program that tries them all, counting divisions as in Lecture 1, finds the answer in a blink. Submit m n in the part 1 form below.\nPart 2 (huge numbers). The same question with 1 ≤ n ≤ m ≤ 1 000 000 000. Now there are about 5 · 10¹⁷ pairs; trying them all would take longer than anyone has. You already know where to look: Lectures 1 and 2 measured that consecutive Fibonacci numbers make Euclid work hardest. The challenge is to apply that exactly. Which consecutive pair is the largest that still fits under the bound, and how many divisions does it take? Check your part 1 answer first: is it a consecutive Fibonacci pair, and what are all the quotients along the way? (Lecture 1’s break pair (832040, 514229) is valid here, but far from the best.) Submit m n in the part 2 form.\nScore: the number of mod operations Euclid performs. Higher is better. Each part has its own leaderboard.\nThis is the course in miniature: part 1 is solved by computing, part 2 by applying a pattern exactly where computing is hopeless. Lecture 3 proves that no pair below the bound beats the best Fibonacci pair."
+  },
+  {
+    "objectID": "challenges.html#e2-the-slowest-search",
+    "href": "challenges.html#e2-the-slowest-search",
+    "title": "Rules",
+    "section": "E2 · The slowest search",
+    "text": "E2 · The slowest search\nBrute-force string matching (Levitin 3.2) tries every shift of the pattern along the text and compares characters from left to right until a mismatch. The checker counts every character comparison over all shifts.\nSubmit: two lines: a text of exactly 1000 characters and a pattern of exactly 10 characters, both using only a and b. The pattern must occur exactly once in the text. Score: the total number of character comparisons. Higher is better. Can you reach the worst case from the lecture?"
+  },
+  {
+    "objectID": "challenges.html#e3-the-tallest-tree-and-the-bushiest-tree",
+    "href": "challenges.html#e3-the-tallest-tree-and-the-bushiest-tree",
+    "title": "Rules",
+    "section": "E3 · The tallest tree and the bushiest tree",
+    "text": "E3 · The tallest tree and the bushiest tree\nInsert the keys one at a time, in your order, into an empty binary search tree (Levitin 4.5). Inserting a key at depth d costs d comparisons.\nSubmit: a first line board: tall or board: bushy, then the numbers 1 to 1023, each exactly once, in any order (separated by spaces or line breaks). Score: the total number of comparisons. There are two leaderboards: the tallest tree (highest total) and the bushiest tree (lowest total). Hand in once in each form if you want to try both."
+  },
+  {
+    "objectID": "challenges.html#e4-jam-the-hash-table",
+    "href": "challenges.html#e4-jam-the-hash-table",
+    "title": "Rules",
+    "section": "E4 · Jam the hash table",
+    "text": "E4 · Jam the hash table\nEach word gets a hash value by Horner’s rule (Levitin 6.5), with a = 1, b = 2, …, z = 26 and base 31, taken mod 101: h(w) = ((…((c₁ · 31 + c₂) · 31 + c₃) …) · 31 + cₖ) mod 101. The words are inserted in your order into an empty table of 101 cells with linear probing (Levitin 7.3): if a cell is taken, try the next one, wrapping around. Every cell inspected counts as one probe.\nSubmit: exactly 50 different words of 1-12 lowercase letters (a-z). Score: the total number of probes for all 50 insertions. Higher is better."
+  },
+  {
+    "objectID": "challenges.html#e5-coins-that-fool-greedy",
+    "href": "challenges.html#e5-coins-that-fool-greedy",
+    "title": "Rules",
+    "section": "E5 · Coins that fool greedy",
+    "text": "E5 · Coins that fool greedy\nGreedy change-making always takes the largest coin that fits. For the coins 1, 5, 10 and 25 this is always optimal; for 1, 3 and 4 it is not (6 = 4 + 1 + 1 by greedy, but 3 + 3 uses only two coins).\nSubmit: 3 to 6 different coin values between 1 and 100, including 1. Score: the number of amounts from 1 to 200 for which greedy uses more coins than the optimum (found by the dynamic-programming algorithm of Levitin 8.1). Higher is better; ties are broken by the total number of extra coins."
+  },
+  {
+    "objectID": "challenges.html#e6-fool-the-nearest-neighbour",
+    "href": "challenges.html#e6-fool-the-nearest-neighbour",
+    "title": "Rules",
+    "section": "E6 · Fool the nearest neighbour",
+    "text": "E6 · Fool the nearest neighbour\nThe nearest-neighbour heuristic for the travelling salesman problem (Levitin 12.3) starts at the first point and always goes to the closest unvisited point (ties go to the point listed first), then returns to the start.\nSubmit: 10 different points with whole-number coordinates from 0 to 100, as 20 numbers x₁ y₁ x₂ y₂ .... The first point is the start. Score: the length of the nearest-neighbour tour divided by the length of the shortest possible tour. Higher is better."
+  },
+  {
+    "objectID": "challenges.html#the-delivery-route-challenge-lecture-5-to-the-last-exercise-session",
+    "href": "challenges.html#the-delivery-route-challenge-lecture-5-to-the-last-exercise-session",
+    "title": "Rules",
+    "section": "The delivery-route challenge (Lecture 5 to the last exercise session)",
+    "text": "The delivery-route challenge (Lecture 5 to the last exercise session)\nThe parcel service has a depot and 200 drops in a synthetic area of about 20 × 14 km. The coordinates are in the file routing-instance.txt: one line per point, id x y, where id 0 is the depot. Distances are straight lines (Euclidean).\nSubmit: the order in which to visit the drops: the numbers 1 to 200, each exactly once. The route starts and ends at the depot. Score: the total route length in km. Lower is better.\nTwo reference numbers are published with the instance: a lower bound (no route can be shorter than the minimum spanning tree of the points, a fact you will meet in Lectures 12 and 15) and the length of the nearest-neighbour route. The leaderboard also shows each route’s gap to the lower bound. Anything goes: exhaustive search on pieces, greedy ideas, local improvements, your own heuristics. In the last exercise session, volunteers can show how they built their route."
+  },
+  {
+    "objectID": "challenges.html#practice-problems-on-kattis",
+    "href": "challenges.html#practice-problems-on-kattis",
+    "title": "Rules",
+    "section": "Practice problems on Kattis",
+    "text": "Practice problems on Kattis\nFor classic “write a program and let a judge test it” practice, each session has a contest on open.kattis.com with its problems. A Kattis account is optional; if you create one, you may use a nickname. Join the session’s contest and give your Kattis name once on the site’s “My nickname” page: your solves then appear on the season leaderboard (updated once a day)."
   },
   {
     "objectID": "index.html",
@@ -159,5 +278,33 @@
     "title": "See it run. Count it. Beat it.",
     "section": "The plan",
     "text": "The plan\n\n\n\nSession\nWeek\nLectures\nChallenge\n\n\n\n\nE1\n3\n1-3\nMake Euclid work hardest\n\n\nE2\n4\n4-5\nThe slowest search\n\n\nE3\n5\n6-8\nThe tallest and the bushiest tree\n\n\nE4\n7\n9-11\nJam the hash table\n\n\nE5\n8\n12-13\nCoins that fool greedy\n\n\nE6\n9\n14-15\nFool the nearest neighbour\n\n\nL5-E6\n3-9\n5-15\nThe delivery route (runs all course)\n\n\n\nUpdated 2026-11-25."
+  },
+  {
+    "objectID": "session-e5.html",
+    "href": "session-e5.html",
+    "title": "E5 · week 8",
+    "section": "",
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
+  },
+  {
+    "objectID": "session-e5.html#in-the-room-your-two-hours",
+    "href": "session-e5.html#in-the-room-your-two-hours",
+    "title": "E5 · week 8",
+    "section": "",
+    "text": "0:00Reveal. Last week's leaderboard on the screen. Someone explains how they found a top answer: maybe you. You learn the idea behind the best answers.0:10Worked example. The teacher solves one exam-style task on the board, thinking aloud, wrong turns included. Copy the method, not just the answer. It is the model for the sheet.0:30Exercise sheet in pairs: your main job. Trace, count and prove with a partner; check traces in the steppers. Stuck for five minutes? Wave. This is what the exam asks.1:20Fix-ups. The two or three mistakes the teacher saw most, fixed on the board for everyone. Nobody makes them again.1:25Sprint: a team puzzle. Your table is a team. Pencil and paper; one answer form per team (below); the live board is on the projector. Fast, by hand, together.1:45Kick-off. This week's main challenge: first ideas in the room, then it is yours for the week. A head start for the week.\nBring: pencil, paper, and one laptop or phone per table for the forms."
+  },
+  {
+    "objectID": "session-e5.html#during-the-week-pick-what-you-like",
+    "href": "session-e5.html#during-the-week-pick-what-you-like",
+    "title": "E5 · week 8",
+    "section": "During the week: pick what you like",
+    "text": "During the week: pick what you like\nEverything here is optional and ungraded. Fifteen minutes or five hours both count; your results show on the leaderboards under your nickname.\n\nMain challenge\nGreedy change-making always takes the largest coin that fits. For the coins 1, 5, 10 and 25 this is always optimal; for 1, 3 and 4 it is not (6 = 4 + 1 + 1 by greedy, but 3 + 3 uses only two coins).\nSubmit: 3 to 6 different coin values between 1 and 100, including 1. Score: the number of amounts from 1 to 200 for which greedy uses more coins than the optimum (found by the dynamic-programming algorithm of Levitin 8.1). Higher is better; ties are broken by the total number of extra coins.\n\nHand in: Coins that fool greedy\n\n\n\n\n\nKattis\nWrite a program and let Kattis judge it. Join the session’s contest so your solves count on the season table (give your Kattis name once on My nickname).\n\n\nnatjecanje\nsquarepegs\npaintball\nmaxflow"
+  },
+  {
+    "objectID": "leaderboards.html",
+    "href": "leaderboards.html",
+    "title": "Leaderboards",
+    "section": "",
+    "text": "Live: the boards update as answers come in (nicknames only). The season table counts badges and Kattis solves; each challenge board ranks the best answer, and the first to reach a score wins a tie."
   }
 ]

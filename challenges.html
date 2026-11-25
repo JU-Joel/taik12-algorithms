@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Challenges – Algorithms · TAIK12</title>
+<title>Rules – Algorithms · TAIK12</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73037e8ae0e8c427f8fbda53991205c5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a265b625963bcf1e6060b9816749a400.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="challenge-api" content="https://taik12-challenges.ju-algorithms.workers.dev">
 
 
 </head>
@@ -95,13 +96,52 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sessions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sessions</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sessions">    
+        <li>
+    <a class="dropdown-item" href="./session-e1.html">
+ <span class="dropdown-text">E1 · week 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session-e2.html">
+ <span class="dropdown-text">E2 · week 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session-e3.html">
+ <span class="dropdown-text">E3 · week 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session-e4.html">
+ <span class="dropdown-text">E4 · week 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session-e5.html">
+ <span class="dropdown-text">E5 · week 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session-e6.html">
+ <span class="dropdown-text">E6 · week 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session-route.html">
+ <span class="dropdown-text">Delivery route</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./me.html"> 
+<span class="menu-text">My nickname</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./steppers.html"> 
 <span class="menu-text">Steppers</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./challenges.html" aria-current="page"> 
-<span class="menu-text">Challenges</span></a>
+<span class="menu-text">Rules</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./kattis.html"> 
@@ -144,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Challenges</h1>
+<h1 class="title">Rules</h1>
 </div>
 
 
@@ -165,19 +205,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="how-it-works" class="level2">
 <h2 class="anchored" data-anchor-id="how-it-works">How it works</h2>
 <ul>
-<li>Each exercise session opens one short challenge. It stays open until the next session, where the leaderboard is shown and the idea behind the best answers is discussed.</li>
-<li>The delivery-route challenge runs for most of the course, from Lecture 5 to the last exercise session.</li>
-<li>You hand in a plain-text file through the ungraded challenge assignment in Canvas. You may resubmit as often as you like; your best valid submission counts.</li>
-<li><strong>Nicknames only.</strong> The first line of every file is <code>nickname: &lt;name&gt;</code>, using 3-20 letters, digits, <code>_</code> or <code>-</code>. Choose a nickname that is not your real name. Leaderboards show nicknames only.</li>
-<li>You submit <strong>inputs, not programs</strong>: numbers, words, points or a route. The teacher’s checker runs the fixed algorithm described below on your input. Write any helper programs you like, in any language, to find good inputs.</li>
+<li>Every exercise session has its own page on the course’s challenge site, with three things to do during the week: a <strong>main challenge</strong> with a live leaderboard, a handful of <strong>badges</strong> (short puzzles with one exact answer) and the session’s <strong>Kattis</strong> problems. In the session itself your table plays a short <strong>sprint</strong>.</li>
+<li>You hand in <strong>on the site</strong>: paste your answer, press Submit, and the checker answers at once: valid or not (and why), your score and your rank. Resubmit as often as you like; your best valid answer counts.</li>
+<li><strong>Nicknames only.</strong> Pick a nickname (3-20 letters, digits, <code>_</code> or <code>-</code>) that is not your real name. Your first submission gives you a <strong>personal key</strong>; the site remembers it in this browser. Save it somewhere: you need it on another device, and nobody else can post under your nickname without it.</li>
+<li>You submit <strong>inputs, not programs</strong>: numbers, words, points or a route. The checker runs the fixed algorithm described below on your input. Write any helper programs you like, in any language, to find good inputs.</li>
 <li>Use any tools you like, including AI tools. The fun is in understanding <em>why</em> your answer works; be ready to explain it if you share it in class.</li>
+<li>The leaderboard is shown at the start of the next session, where someone explains the idea behind a top answer. The delivery-route challenge runs for most of the course, from Lecture 5 to the last exercise session.</li>
 </ul>
 </section>
 <section id="e1-make-euclid-work-hardest-two-parts" class="level2">
 <h2 class="anchored" data-anchor-id="e1-make-euclid-work-hardest-two-parts">E1 · Make Euclid work hardest (two parts)</h2>
 <p>Euclid’s algorithm (Levitin 1.1) computes gcd(m, n) by repeating <code>r ← m mod n; m ← n; n ← r</code> while n ≠ 0. Which pair of numbers makes it divide most often?</p>
-<p><strong>Part 1 (small numbers).</strong> Find the pair with 1 ≤ n ≤ m ≤ 100 that needs the most divisions. There are only 5050 pairs: a short program that tries them all, counting divisions as in Lecture 1, finds the answer in a blink. <strong>Submit</strong> <code>m n</code> as one file to the part 1 challenge.</p>
-<p><strong>Part 2 (huge numbers).</strong> The same question with 1 ≤ n ≤ m ≤ 1 000 000 000. Now there are about 5 · 10¹⁷ pairs; trying them all would take longer than anyone has. You already know where to look: Lectures 1 and 2 measured that consecutive Fibonacci numbers make Euclid work hardest. The challenge is to apply that exactly. Which consecutive pair is the largest that still fits under the bound, and how many divisions does it take? Check your part 1 answer first: is it a consecutive Fibonacci pair, and what are all the quotients along the way? (Lecture 1’s break pair (832040, 514229) is valid here, but far from the best.) <strong>Submit</strong> <code>m n</code> as a separate file to the part 2 challenge.</p>
+<p><strong>Part 1 (small numbers).</strong> Find the pair with 1 ≤ n ≤ m ≤ 100 that needs the most divisions. There are only 5050 pairs: a short program that tries them all, counting divisions as in Lecture 1, finds the answer in a blink. <strong>Submit</strong> <code>m n</code> in the part 1 form below.</p>
+<p><strong>Part 2 (huge numbers).</strong> The same question with 1 ≤ n ≤ m ≤ 1 000 000 000. Now there are about 5 · 10¹⁷ pairs; trying them all would take longer than anyone has. You already know where to look: Lectures 1 and 2 measured that consecutive Fibonacci numbers make Euclid work hardest. The challenge is to apply that exactly. Which consecutive pair is the largest that still fits under the bound, and how many divisions does it take? Check your part 1 answer first: is it a consecutive Fibonacci pair, and what are all the quotients along the way? (Lecture 1’s break pair (832040, 514229) is valid here, but far from the best.) <strong>Submit</strong> <code>m n</code> in the part 2 form.</p>
 <p><strong>Score:</strong> the number of <code>mod</code> operations Euclid performs. Higher is better. Each part has its own leaderboard.</p>
 <p>This is the course in miniature: part 1 is solved by computing, part 2 by applying a pattern exactly where computing is hopeless. Lecture 3 proves that no pair below the bound beats the best Fibonacci pair.</p>
 </section>
@@ -189,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="e3-the-tallest-tree-and-the-bushiest-tree" class="level2">
 <h2 class="anchored" data-anchor-id="e3-the-tallest-tree-and-the-bushiest-tree">E3 · The tallest tree and the bushiest tree</h2>
 <p>Insert the keys one at a time, in your order, into an empty binary search tree (Levitin 4.5). Inserting a key at depth d costs d comparisons.</p>
-<p><strong>Submit:</strong> after the nickname line, a line <code>board: tall</code> or <code>board: bushy</code>, then the numbers 1 to 1023, each exactly once, in any order (separated by spaces or line breaks). <strong>Score:</strong> the total number of comparisons. There are two leaderboards: the <strong>tallest tree</strong> (highest total) and the <strong>bushiest tree</strong> (lowest total). Send one file for each board if you want to try both.</p>
+<p><strong>Submit:</strong> a first line <code>board: tall</code> or <code>board: bushy</code>, then the numbers 1 to 1023, each exactly once, in any order (separated by spaces or line breaks). <strong>Score:</strong> the total number of comparisons. There are two leaderboards: the <strong>tallest tree</strong> (highest total) and the <strong>bushiest tree</strong> (lowest total). Hand in once in each form if you want to try both.</p>
 </section>
 <section id="e4-jam-the-hash-table" class="level2">
 <h2 class="anchored" data-anchor-id="e4-jam-the-hash-table">E4 · Jam the hash table</h2>
@@ -208,13 +248,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-delivery-route-challenge-lecture-5-to-the-last-exercise-session" class="level2">
 <h2 class="anchored" data-anchor-id="the-delivery-route-challenge-lecture-5-to-the-last-exercise-session">The delivery-route challenge (Lecture 5 to the last exercise session)</h2>
-<p>The parcel service has a depot and 200 drops in a synthetic area of about 20 × 14 km. The coordinates are in the file <code>instance.txt</code> published with this challenge: one line per point, <code>id x y</code>, where id 0 is the depot. Distances are straight lines (Euclidean).</p>
+<p>The parcel service has a depot and 200 drops in a synthetic area of about 20 × 14 km. The coordinates are in the file <a href="data/routing-instance.txt"><code>routing-instance.txt</code></a>: one line per point, <code>id x y</code>, where id 0 is the depot. Distances are straight lines (Euclidean).</p>
 <p><strong>Submit:</strong> the order in which to visit the drops: the numbers 1 to 200, each exactly once. The route starts and ends at the depot. <strong>Score:</strong> the total route length in km. Lower is better.</p>
 <p>Two reference numbers are published with the instance: a <strong>lower bound</strong> (no route can be shorter than the minimum spanning tree of the points, a fact you will meet in Lectures 12 and 15) and the length of the <strong>nearest-neighbour</strong> route. The leaderboard also shows each route’s gap to the lower bound. Anything goes: exhaustive search on pieces, greedy ideas, local improvements, your own heuristics. In the last exercise session, volunteers can show how they built their route.</p>
 </section>
 <section id="practice-problems-on-kattis" class="level2">
 <h2 class="anchored" data-anchor-id="practice-problems-on-kattis">Practice problems on Kattis</h2>
-<p>For classic “write a program and let a judge test it” practice, the per-session list of problems on open.kattis.com is published with these challenges. A Kattis account is optional; if you create one, you may use a nickname.</p>
+<p>For classic “write a program and let a judge test it” practice, each session has a contest on open.kattis.com with its problems. A Kattis account is optional; if you create one, you may use a nickname. Join the session’s contest and give your Kattis name once on the site’s “My nickname” page: your solves then appear on the season leaderboard (updated once a day).</p>
 
 
 </section>
@@ -634,6 +674,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script src="challenge-app.js"></script>
 
 
 
