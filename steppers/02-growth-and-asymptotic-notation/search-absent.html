@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SequentialSearch(A, 60000), n = 8 · step by step</title>
+<style>
+:root { --ink:#3F3F3F; --purple:#951A80; --purple-light:#F3E8F2; --teal:#2C7E91;
+  --teal-light:#E2EFEE; --hl:#FFF3D1; --grey:#757679; --grey-light:#EAEAEA; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff; }
+main { max-width:1100px; margin:0 auto; padding:24px 16px 40px; }
+h1 { font-size:28px; margin:0 0 4px; }
+.src { color:var(--teal); font-weight:bold; margin:0 0 18px; }
+.grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+.panel { border:3px solid var(--purple-light); border-radius:14px; padding:16px; }
+ol.code { font-family:"Courier New",monospace; font-size:18px; margin:0; padding-left:2.6em; }
+ol.code li { padding:3px 8px; border-radius:6px; white-space:pre; }
+ol.code li.now { background:var(--hl); outline:2px solid #C98B00; }
+.kw { font-weight:bold; }
+.cmt { font-family:"Courier New",monospace; font-size:16px; color:var(--grey); font-style:italic; margin:0 0 8px; white-space:pre-line; }
+table { border-collapse:collapse; width:100%; font-size:18px; }
+th, td { border-bottom:1px solid var(--grey-light); padding:6px 8px; text-align:right; }
+th { color:var(--purple); text-align:right; }
+.counter { font-size:22px; margin:12px 0 4px; }
+.counter b { color:var(--purple); font-size:30px; }
+.note { min-height:1.6em; font-style:italic; }
+.controls { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 8px; }
+button { font:inherit; font-size:18px; padding:10px 18px; border-radius:10px; border:2px solid var(--purple);
+  background:#fff; color:var(--purple); cursor:pointer; }
+button.primary { background:var(--purple); color:#fff; }
+button:disabled { opacity:.45; cursor:default; }
+button:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.pos { color:var(--grey); }
+.result { margin-top:10px; font-weight:bold; }
+</style></head>
+<body><main>
+<h1>SequentialSearch(A, 60000), n = 8</h1>
+<p class="src">ALGORITHM SequentialSearch(A[0..n − 1], K) · Levitin 2.1</p>
+<div class="controls" role="group" aria-label="Step controls">
+  <button id="reset">⏮ Start</button>
+  <button id="back">◀ Back</button>
+  <button id="next" class="primary">Next step ▶</button>
+  <button id="play">▶ Play</button>
+  <span class="pos" id="pos" aria-live="polite"></span>
+</div>
+<div class="grid">
+  <section class="panel" aria-label="Pseudocode"><p class="cmt" id="cmt"></p><ol class="code" id="code"></ol></section>
+  <section class="panel" aria-label="State">
+    <table><thead><tr id="head"></tr></thead><tbody id="vars"></tbody></table>
+    <p class="counter">comparisons: <b id="count">0</b></p>
+    <p class="note" id="note" aria-live="polite"></p>
+    <p class="result" id="result" hidden>not found (−1) after 8 comparisons</p>
+  </section>
+</div>
+<p class="pos">Keys: → or space = next step, ← = back. Every value comes from the same run as the lecture's trace table.</p>
+</main>
+<script>
+const T = {"pseudocode": ["i \u2190 0", "while i < n and A[i] \u2260 K do", "    i \u2190 i + 1", "if i < n return i", "else return \u22121"], "columns": ["i", "A[i]", "A[i] \u2260 K"], "comments": ["//Searches for a given value in a given array by sequential search", "//Input: An array A[0..n \u2212 1] and a search key K", "//Output: The index of the first element in A that matches K", "//        or \u22121 if there are no matching elements"], "steps": [{"line": 1, "state": {"i": "0", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 0, "note": "i = 0, key K = 60000"}, {"line": 2, "state": {"i": "0", "A[i]": "48213", "A[i] \u2260 K": "yes"}, "counter": 1, "note": "compare A[0] = 48213 with K = 60000"}, {"line": 3, "state": {"i": "1", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 1, "note": "i = 1"}, {"line": 2, "state": {"i": "1", "A[i]": "17055", "A[i] \u2260 K": "yes"}, "counter": 2, "note": "compare A[1] = 17055 with K = 60000"}, {"line": 3, "state": {"i": "2", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 2, "note": "i = 2"}, {"line": 2, "state": {"i": "2", "A[i]": "90342", "A[i] \u2260 K": "yes"}, "counter": 3, "note": "compare A[2] = 90342 with K = 60000"}, {"line": 3, "state": {"i": "3", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 3, "note": "i = 3"}, {"line": 2, "state": {"i": "3", "A[i]": "33718", "A[i] \u2260 K": "yes"}, "counter": 4, "note": "compare A[3] = 33718 with K = 60000"}, {"line": 3, "state": {"i": "4", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 4, "note": "i = 4"}, {"line": 2, "state": {"i": "4", "A[i]": "64120", "A[i] \u2260 K": "yes"}, "counter": 5, "note": "compare A[4] = 64120 with K = 60000"}, {"line": 3, "state": {"i": "5", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 5, "note": "i = 5"}, {"line": 2, "state": {"i": "5", "A[i]": "25891", "A[i] \u2260 K": "yes"}, "counter": 6, "note": "compare A[5] = 25891 with K = 60000"}, {"line": 3, "state": {"i": "6", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 6, "note": "i = 6"}, {"line": 2, "state": {"i": "6", "A[i]": "71436", "A[i] \u2260 K": "yes"}, "counter": 7, "note": "compare A[6] = 71436 with K = 60000"}, {"line": 3, "state": {"i": "7", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 7, "note": "i = 7"}, {"line": 2, "state": {"i": "7", "A[i]": "50267", "A[i] \u2260 K": "yes"}, "counter": 8, "note": "compare A[7] = 50267 with K = 60000"}, {"line": 3, "state": {"i": "8", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 8, "note": "i = 8"}, {"line": 2, "state": {"i": "8", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 8, "note": "i = 8 is not < n: stop without comparing"}, {"line": 4, "state": {"i": "8", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 8, "note": "i = 8 is not < n: take the else branch"}, {"line": 5, "state": {"i": "8", "A[i]": "\u2013", "A[i] \u2260 K": "\u2013"}, "counter": 8, "note": "return \u22121"}]};
+const KW = new Set(["ALGORITHM", "while", "do", "for", "to", "if", "else", "return", "and", "or", "not"]);
+let i = 0, timer = null;
+const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const code = document.getElementById('code');
+T.pseudocode.forEach((line) => {
+  const li = document.createElement('li');
+  const indent = line.length - line.trimStart().length;
+  li.textContent = '';
+  li.append(' '.repeat(indent));
+  line.trim().split(/(\b\w+\b)/).forEach((tok) => {
+    if (KW.has(tok)) { const b = document.createElement('span'); b.className = 'kw'; b.textContent = tok; li.append(b); }
+    else li.append(tok);
+  });
+  code.append(li);
+});
+document.getElementById('cmt').textContent = (T.comments || []).join('\n');
+document.getElementById('head').innerHTML = '<th>variable</th><th>value</th>';
+function show() {
+  const s = T.steps[i];
+  [...code.children].forEach((li, n) => li.classList.toggle('now', n + 1 === s.line));
+  document.getElementById('vars').innerHTML = T.columns.map((c) =>
+    `<tr><td style="text-align:left">${c}</td><td>${s.state[c] ?? '–'}</td></tr>`).join('');
+  document.getElementById('count').textContent = s.counter;
+  document.getElementById('note').textContent = s.note || '';
+  document.getElementById('pos').textContent = `step ${i} of ${T.steps.length - 1} · line ${s.line}`;
+  document.getElementById('back').disabled = i === 0;
+  document.getElementById('next').disabled = i === T.steps.length - 1;
+  document.getElementById('result').hidden = i !== T.steps.length - 1;
+  if (i === T.steps.length - 1) stop();
+}
+function stop() { if (timer) { clearInterval(timer); timer = null; } document.getElementById('play').textContent = '▶ Play'; }
+document.getElementById('next').onclick = () => { if (i < T.steps.length - 1) { i++; show(); } };
+document.getElementById('back').onclick = () => { stop(); if (i > 0) { i--; show(); } };
+document.getElementById('reset').onclick = () => { stop(); i = 0; show(); };
+const play = document.getElementById('play');
+if (reduce) { play.disabled = true; play.title = 'Play is off because your system asks for reduced motion'; }
+play.onclick = () => {
+  if (timer) { stop(); return; }
+  if (i === T.steps.length - 1) i = 0;
+  play.textContent = '⏸ Pause';
+  timer = setInterval(() => { if (i < T.steps.length - 1) { i++; show(); } else stop(); }, 1100);
+};
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); document.getElementById('next').click(); }
+  if (e.key === 'ArrowLeft') document.getElementById('back').click();
+});
+show();
+</script></body></html>

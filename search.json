@@ -140,10 +140,17 @@
     "text": "Lecture 1: Algorithms and problem solving\n\nConsecutive integer checking (60, 0)\nConsecutive integer checking (60, 24)\nEuclid(60, 24)\nEuclid(832040, 514229)\nSieve(25)"
   },
   {
+    "objectID": "steppers.html#lecture-2-growth-and-asymptotic-notation",
+    "href": "steppers.html#lecture-2-growth-and-asymptotic-notation",
+    "title": "Step through the algorithms",
+    "section": "Lecture 2: Growth and asymptotic notation",
+    "text": "Lecture 2: Growth and asymptotic notation\n\nSequentialSearch(A, 60000), n = 8\nSequentialSearch(A, 48213), n = 8\nSequentialSearch(A, 50267), n = 8"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Algorithms (TAIK12) · Challenges and steppers",
     "section": "",
-    "text": "Optional, ungraded challenges, practice problems and step-by-step algorithm traces for the Algorithms course at Jönköping University. Nicknames only.\n\nSteppers: watch an algorithm run line by line.\nChallenges: optional, ungraded puzzles; hand in through Canvas with a nickname.\nKattis practice: public problems with an automatic judge.\nLeaderboards: nicknames only.\n\nUpdated 2026-11-24."
+    "text": "Optional, ungraded challenges, practice problems and step-by-step algorithm traces for the Algorithms course at Jönköping University. Nicknames only.\n\nSteppers: watch an algorithm run line by line.\nChallenges: optional, ungraded puzzles; hand in through Canvas with a nickname.\nKattis practice: public problems with an automatic judge.\nLeaderboards: nicknames only.\n\nUpdated 2026-11-25."
   }
 ]
